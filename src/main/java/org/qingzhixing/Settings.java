@@ -23,6 +23,14 @@ public class Settings {
         ParseSettingsFile(settingsFilePath);
     }
 
+    public ArrayList<Account> getBotAccountList() {
+        return botAccountList;
+    }
+
+    public Account getMasterAccount() {
+        return masterAccount;
+    }
+
     public void ParseSettingsFile(@NotNull String settingsFilePath) throws RuntimeException {
         URL settingsURL = this.getClass().getResource(settingsFilePath);
         if (settingsURL == null) {

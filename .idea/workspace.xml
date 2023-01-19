@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="读取文件成功">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Maven_package.xml" afterDir="false" />
+    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="Settings.Debug_ConsoleOutputSettings">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/BotControllers/AbstractBotController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/BotControllers/Test_BotController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/BotGroupController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EasyBotFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/settings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +131,7 @@
       <updated>1674127461118</updated>
       <workItem from="1674127462262" duration="2497000" />
       <workItem from="1674130885456" duration="367000" />
-      <workItem from="1674131264599" duration="12652000" />
+      <workItem from="1674131264599" duration="15578000" />
     </task>
     <task id="LOCAL-00001" summary="Init and backup">
       <created>1674134140854</created>
@@ -146,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674144748181</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Settings.Debug_ConsoleOutputSettings">
+      <created>1674145230168</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1674145230168</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,7 +174,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init and backup" />
     <MESSAGE value="读取文件成功" />
-    <option name="LAST_COMMIT_MESSAGE" value="读取文件成功" />
+    <MESSAGE value="Settings.Debug_ConsoleOutputSettings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Settings.Debug_ConsoleOutputSettings" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
