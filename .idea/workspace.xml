@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="Init and backup">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/qingzhixing/Test.java" afterDir="false" />
+    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="读取文件成功">
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Maven_package.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/settings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +54,6 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "code.cleanup.on.save": "true",
     "last_directory_selection": "/Users/qingzhixing/Documents/Project/IdeaProjects/QingzhixingChatBot/src/test/java",
@@ -133,7 +130,7 @@
       <updated>1674127461118</updated>
       <workItem from="1674127462262" duration="2497000" />
       <workItem from="1674130885456" duration="367000" />
-      <workItem from="1674131264599" duration="12260000" />
+      <workItem from="1674131264599" duration="12652000" />
     </task>
     <task id="LOCAL-00001" summary="Init and backup">
       <created>1674134140854</created>
@@ -142,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674134140854</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="读取文件成功">
+      <created>1674144748181</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1674144748181</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,7 +165,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init and backup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Init and backup" />
+    <MESSAGE value="读取文件成功" />
+    <option name="LAST_COMMIT_MESSAGE" value="读取文件成功" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

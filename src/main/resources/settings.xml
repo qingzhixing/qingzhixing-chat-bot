@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <settings>
     <botSettings>
+        <!--这里填写你的机器人账号和密码-->
         <account>
-            <botQQID></botQQID>
-            <botQQPassword></botQQPassword>
+            <botQQID>12345</botQQID>
+            <botQQPassword>test-bot1</botQQPassword>
+        </account>
+        <account>
+            <botQQID>67890</botQQID>
+            <botQQPassword>test-bot2</botQQPassword>
         </account>
     </botSettings>
     <masterSettings>
-        <masterQQID></masterQQID>
+        <!--这里填写你的QQ-->
+        <masterQQID>1145141919810</masterQQID>
     </masterSettings>
 </settings>

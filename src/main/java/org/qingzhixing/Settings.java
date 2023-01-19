@@ -86,6 +86,11 @@ public class Settings {
     }
 
     public void Debug_ConsoleOutputSettings() {
-
+        System.out.println("Bot Accounts");
+        for (var account : botAccountList) {
+            System.out.println(account);
+        }
+        System.out.println("\nMaster Account");
+        System.out.println(masterAccount.ID);
     }
 }

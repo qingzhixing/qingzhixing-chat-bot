@@ -15,4 +15,12 @@ public class Account {
 
     public Account() {
     }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "ID=" + ID +
+                ", password='" + password + '\'' +
+                '}';
+    }
 }
