@@ -37,7 +37,6 @@ public class Settings {
             settingsURL = Utilities.GetCurrentJarResourceURL(settingsFilePath);
         } catch (Exception e) {
             logger.error("Unable to load settings.Reason: " + e.getMessage(), e);
-            System.exit(1);
             return;
         }
         /*
@@ -99,11 +98,16 @@ public class Settings {
     }
 
     public void Debug_ConsoleOutputSettings() {
-        System.out.println("Bot Accounts");
+        System.out.println("#Bot Accounts:");
         for (var account : botAccountList) {
             System.out.println(account);
         }
-        System.out.println("\nMaster Account");
+        System.out.println("#Master Account:");
         System.out.println(masterAccount.ID);
+    }
+
+    public boolean CheckIsValid() {
+        //bot账号列表数量>0认为合法
+        return botAccountList.size() > 0;
     }
 }

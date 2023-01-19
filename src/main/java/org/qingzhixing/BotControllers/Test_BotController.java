@@ -20,6 +20,6 @@ public class Test_BotController extends AbstractBotController {
     public void Start() {
         logger.info("bot QQID: " + bot.getId());
         logger.info("master QQID: " + master.ID);
-        AddEventListener();
+        bot.login();
     }
 }
