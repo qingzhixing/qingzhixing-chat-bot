@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Settings>
-    <BotSettings>
-        <Account>
-            <BotQQID></BotQQID>
-            <BotQQPassword></BotQQPassword>
-        </Account>
-    </BotSettings>
-    <MasterSettings>
-        <MasterQQID></MasterQQID>
-    </MasterSettings>
-</Settings>
+<settings>
+    <botSettings>
+        <account>
+            <botQQID></botQQID>
+            <botQQPassword></botQQPassword>
+        </account>
+    </botSettings>
+    <masterSettings>
+        <masterQQID></masterQQID>
+    </masterSettings>
+</settings>
