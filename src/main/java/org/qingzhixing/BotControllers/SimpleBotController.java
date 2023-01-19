@@ -7,12 +7,12 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.qingzhixing.Account;
 
-public class Test_BotController extends AbstractBotController {
-    private static final Logger logger = Logger.getLogger(Test_BotController.class);
+public class SimpleBotController extends AbstractBotController {
+    private static final Logger logger = Logger.getLogger(SimpleBotController.class);
 
     private final Account masterAccount;
 
-    public Test_BotController(@NotNull Bot bot, @NotNull Account masterAccount) {
+    public SimpleBotController(@NotNull Bot bot, @NotNull Account masterAccount) {
         BindBot(bot);
         this.masterAccount = masterAccount;
     }

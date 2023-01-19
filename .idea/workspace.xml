@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="settings文件选择">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/BotControllers/Test_BotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/BotControllers/Test_BotController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="bot登陆与上线通知" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -129,7 +124,7 @@
       <updated>1674127461118</updated>
       <workItem from="1674127462262" duration="2497000" />
       <workItem from="1674130885456" duration="367000" />
-      <workItem from="1674131264599" duration="21920000" />
+      <workItem from="1674131264599" duration="22031000" />
     </task>
     <task id="LOCAL-00001" summary="Init and backup">
       <created>1674134140854</created>
@@ -173,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674152772910</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="bot登陆与上线通知">
+      <created>1674154447974</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1674154447974</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,7 +199,8 @@
     <MESSAGE value="AbstractBotController.java&#10;Test_BotController.java&#10;EasyBotFactory.java&#10;BotGroupController.java&#10;added" />
     <MESSAGE value="Utilities.java" />
     <MESSAGE value="settings文件选择" />
-    <option name="LAST_COMMIT_MESSAGE" value="settings文件选择" />
+    <MESSAGE value="bot登陆与上线通知" />
+    <option name="LAST_COMMIT_MESSAGE" value="bot登陆与上线通知" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

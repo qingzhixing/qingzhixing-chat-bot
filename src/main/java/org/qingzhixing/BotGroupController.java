@@ -2,7 +2,7 @@ package org.qingzhixing;
 
 import org.jetbrains.annotations.NotNull;
 import org.qingzhixing.BotControllers.AbstractBotController;
-import org.qingzhixing.BotControllers.Test_BotController;
+import org.qingzhixing.BotControllers.SimpleBotController;
 
 import java.util.ArrayList;
 
@@ -13,7 +13,7 @@ public class BotGroupController {
         botControllers = new ArrayList<>();
         for (var botAccount : settings.getBotAccountList()) {
             var bot = EasyBotFactory.newBot(botAccount);
-            botControllers.add(new Test_BotController(bot, settings.getMasterAccount()));
+            botControllers.add(new SimpleBotController(bot, settings.getMasterAccount()));
         }
     }
 
