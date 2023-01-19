@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="bot登陆与上线通知" />
+    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="Rename">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/SimpleEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/BotControllers/AbstractBotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/BotControllers/AbstractBotController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/BotControllers/SimpleBotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/BotControllers/SimpleBotController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/BotGroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/BotGroupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Utilities.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -124,7 +132,7 @@
       <updated>1674127461118</updated>
       <workItem from="1674127462262" duration="2497000" />
       <workItem from="1674130885456" duration="367000" />
-      <workItem from="1674131264599" duration="22031000" />
+      <workItem from="1674131264599" duration="27346000" />
     </task>
     <task id="LOCAL-00001" summary="Init and backup">
       <created>1674134140854</created>
@@ -175,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674154447974</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Rename">
+      <created>1674155092540</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1674155092540</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,7 +215,8 @@
     <MESSAGE value="Utilities.java" />
     <MESSAGE value="settings文件选择" />
     <MESSAGE value="bot登陆与上线通知" />
-    <option name="LAST_COMMIT_MESSAGE" value="bot登陆与上线通知" />
+    <MESSAGE value="Rename" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rename" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

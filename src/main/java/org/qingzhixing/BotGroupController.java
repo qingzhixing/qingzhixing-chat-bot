@@ -11,15 +11,13 @@ public class BotGroupController {
 
     public BotGroupController(@NotNull Settings settings) {
         botControllers = new ArrayList<>();
-        for (var botAccount : settings.getBotAccountList()) {
+        settings.getBotAccountList().forEach(botAccount -> {
             var bot = EasyBotFactory.newBot(botAccount);
             botControllers.add(new SimpleBotController(bot, settings.getMasterAccount()));
-        }
+        });
     }
 
     public void StartControllers() {
-        for (var controller : botControllers) {
-            controller.Start();
-        }
+        botControllers.forEach(AbstractBotController::Start);
     }
 }

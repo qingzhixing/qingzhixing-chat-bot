@@ -1,6 +1,7 @@
 package org.qingzhixing.BotControllers;
 
 import net.mamoe.mirai.Bot;
+import net.mamoe.mirai.event.SimpleListenerHost;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
@@ -17,7 +18,7 @@ public abstract class AbstractBotController {
         logger.info(this.getClass().getName() + ".Start() called");
     }
 
-    public void AddEventListener() {
-        logger.info(this.getClass().getName() + ".AddEventListener() called");
+    public final void BindEventListener(@NotNull SimpleListenerHost eventListener) {
+        bot.getEventChannel().registerListenerHost(eventListener);
     }
 }

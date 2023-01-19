@@ -39,24 +39,6 @@ public class Settings {
             logger.error("Unable to load settings.Reason: " + e.getMessage(), e);
             return;
         }
-        /*
-        File settingsFile;
-        try {
-            settingsFile = Utilities.GetCurrentJarResourceFile(settingsFilePath);
-        } catch (RuntimeException e) {
-            logger.error("Unable to load settings.Reason: " + e.getMessage(), e);
-            System.exit(1);
-            return;
-        }
-
-        logger.debug(settingsFile.getAbsolutePath());
-        //判断settingsFile是否存在并且判断是否为文件
-        if (!settingsFile.exists() || !settingsFile.isFile()) {
-            String errorString = "settings file不存在或者为文件夹";
-            logger.error(errorString);
-            throw new IllegalArgumentException(errorString);
-        }
-         */
 
         //使用SAXBuilder解析xml
         SAXBuilder builder = new SAXBuilder();
@@ -67,7 +49,7 @@ public class Settings {
             //parse bot settings
             Element botSettingsElement = rootElement.getChild("botSettings");
             List<Element> botAccountElements = botSettingsElement.getChildren("account");
-            for (Element element : botAccountElements) {
+            botAccountElements.forEach(element -> {
                 Element botQQIDElement = element.getChild("botQQID");
                 Element botQQPasswordElement = element.getChild("botQQPassword");
                 if (botQQPasswordElement == null ||
@@ -76,13 +58,12 @@ public class Settings {
                         botQQIDElement.getText().equals("")
                 ) {
                     logger.warn("Bot account 配置存在一个账号配置QQID或者Password项不存在或未填写");
-                    continue;
+                    return;
                 }
                 long id = Long.parseLong(botQQIDElement.getText());
                 String password = botQQPasswordElement.getText();
                 botAccountList.add(new Account(id, password));
-            }
-
+            });
             //parse master settings
             Element masterSettingsElement = rootElement.getChild("masterSettings");
             Element masterQQIDElement = masterSettingsElement.getChild("masterQQID");
@@ -99,9 +80,7 @@ public class Settings {
 
     public void Debug_ConsoleOutputSettings() {
         System.out.println("#Bot Accounts:");
-        for (var account : botAccountList) {
-            System.out.println(account);
-        }
+        botAccountList.forEach(System.out::println);
         System.out.println("#Master Account:");
         System.out.println(masterAccount.ID);
     }
