@@ -31,28 +31,33 @@ public class Settings {
         return masterAccount;
     }
 
-    public void ParseSettingsFile(@NotNull String settingsFilePath) throws RuntimeException {
-        URL settingsURL = this.getClass().getResource(settingsFilePath);
-        if (settingsURL == null) {
-            String errorMessage = "settingsURL为null.";
-            logger.error(errorMessage);
-            logger.error("settingsFilePath:" + settingsFilePath);
-            throw new RuntimeException(errorMessage);
+    public void ParseSettingsFile(@NotNull String settingsFilePath) {
+        URL settingsURL;
+        try {
+            settingsURL = Utilities.GetCurrentJarResourceURL(settingsFilePath);
+        } catch (Exception e) {
+            logger.error("Unable to load settings.Reason: " + e.getMessage(), e);
+            System.exit(1);
+            return;
         }
-//        //判断settingsFile是否为空
-//        if (settingsFile == null) {
-//            String errorString = "settings file 不能为null！";
-//            logger.error(errorString);
-//            throw new IllegalArgumentException(errorString);
-//        }
-//
-//        logger.debug(settingsFile.getAbsolutePath());
-//        //判断settingsFile是否存在并且判断是否为文件
-//        if (!settingsFile.exists() || !settingsFile.isFile()) {
-//            String errorString = "settings file不存在或者为文件夹";
-//            logger.error(errorString);
-//            throw new IllegalArgumentException(errorString);
-//        }
+        /*
+        File settingsFile;
+        try {
+            settingsFile = Utilities.GetCurrentJarResourceFile(settingsFilePath);
+        } catch (RuntimeException e) {
+            logger.error("Unable to load settings.Reason: " + e.getMessage(), e);
+            System.exit(1);
+            return;
+        }
+
+        logger.debug(settingsFile.getAbsolutePath());
+        //判断settingsFile是否存在并且判断是否为文件
+        if (!settingsFile.exists() || !settingsFile.isFile()) {
+            String errorString = "settings file不存在或者为文件夹";
+            logger.error(errorString);
+            throw new IllegalArgumentException(errorString);
+        }
+         */
 
         //使用SAXBuilder解析xml
         SAXBuilder builder = new SAXBuilder();
