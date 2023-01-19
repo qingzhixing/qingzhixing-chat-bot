@@ -4,10 +4,8 @@ import kotlin.coroutines.CoroutineContext;
 import net.mamoe.mirai.contact.Friend;
 import net.mamoe.mirai.event.EventHandler;
 import net.mamoe.mirai.event.SimpleListenerHost;
-import net.mamoe.mirai.event.events.MessageEvent;
-import net.mamoe.mirai.message.data.FlashImage;
-import net.mamoe.mirai.message.data.MessageContent;
-import net.mamoe.mirai.message.data.PlainText;
+import net.mamoe.mirai.event.events.GroupMessageEvent;
+import net.mamoe.mirai.message.data.*;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.qingzhixing.Utilities;
@@ -29,10 +27,13 @@ public class SimpleEventListener extends SimpleListenerHost {
     }
 
     @EventHandler
-    public void onMessage(@NotNull MessageEvent event) {
+    public void onGroupMessage(@NotNull GroupMessageEvent event) {
         var sender = event.getSender();
+        var group = event.getGroup();
         var messageChain = event.getMessage();
-        boolean atFlag = Utilities.CheckMessageChainAt(messageChain);
+        var bot = event.getBot();
+
+        boolean atFlag = Utilities.CheckMessageChainAtUser(messageChain, bot.getAsFriend());
         messageChain.forEach(message -> {
             if (!(message instanceof MessageContent)) return;
             MessageContent messageContent = (MessageContent) message;
@@ -43,7 +44,17 @@ public class SimpleEventListener extends SimpleListenerHost {
                 masterFriend.sendMessage(commonImage);
                 masterFriend.sendMessage("发送者 昵称:\"" + sender.getNick() + "\" QQID:" + sender.getId());
             } else if (messageContent instanceof PlainText && atFlag) {
-
+                var text = ((PlainText) messageContent).getContent();
+                Image avatar = Utilities.URLToImage(sender.getAvatarUrl(), bot);
+                if (text.contains("我是谁")) {
+                    MessageChain replyChain = MessageUtils.newChain(
+                            new PlainText("头像:"),
+                            avatar,
+                            new PlainText("昵称: \"" + sender.getNick() + "\"\n"),
+                            new PlainText("ID: " + sender.getId())
+                    );
+                    group.sendMessage(replyChain);
+                }
             }
         });
     }
