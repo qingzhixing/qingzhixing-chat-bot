@@ -25,10 +25,11 @@ public class Main {
                 finalSettings = publicSettings;
             } else {
                 logger.info("settings.xml不合法或不存在，无配置文件，程序无法运行");
+                return;
             }
         }
 
-//        var botGroupControllers = new BotGroupController(finalSettings);
-//        botGroupControllers.StartControllers();
+        var botGroupControllers = new BotGroupController(finalSettings);
+        botGroupControllers.StartControllers();
     }
 }

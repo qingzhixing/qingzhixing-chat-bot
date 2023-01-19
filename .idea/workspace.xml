@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="Utilities.java">
+    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="settings文件选择">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/BotControllers/Test_BotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/BotControllers/Test_BotController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EasyBotFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EasyBotFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Settings.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,11 +59,12 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "SDK",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -129,7 +129,7 @@
       <updated>1674127461118</updated>
       <workItem from="1674127462262" duration="2497000" />
       <workItem from="1674130885456" duration="367000" />
-      <workItem from="1674131264599" duration="20231000" />
+      <workItem from="1674131264599" duration="21920000" />
     </task>
     <task id="LOCAL-00001" summary="Init and backup">
       <created>1674134140854</created>
@@ -166,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674150238997</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="settings文件选择">
+      <created>1674152772910</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1674152772910</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,7 +196,8 @@
     <MESSAGE value="Settings.Debug_ConsoleOutputSettings" />
     <MESSAGE value="AbstractBotController.java&#10;Test_BotController.java&#10;EasyBotFactory.java&#10;BotGroupController.java&#10;added" />
     <MESSAGE value="Utilities.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Utilities.java" />
+    <MESSAGE value="settings文件选择" />
+    <option name="LAST_COMMIT_MESSAGE" value="settings文件选择" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
