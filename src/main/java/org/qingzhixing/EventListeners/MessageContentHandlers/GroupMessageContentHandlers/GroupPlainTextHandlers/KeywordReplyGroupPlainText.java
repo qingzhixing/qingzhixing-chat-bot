@@ -3,7 +3,7 @@ package org.qingzhixing.EventListeners.MessageContentHandlers.GroupMessageConten
 import net.mamoe.mirai.contact.Friend;
 
 public class KeywordReplyGroupPlainText extends AbstractGroupPlainTextHandler {
-    protected KeywordReplyGroupPlainText(Friend masterFriend) {
+    public KeywordReplyGroupPlainText(Friend masterFriend) {
         super(masterFriend);
     }
 

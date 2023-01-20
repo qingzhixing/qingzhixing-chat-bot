@@ -3,7 +3,7 @@ package org.qingzhixing.EventListeners.MessageContentHandlers.GroupMessageConten
 import net.mamoe.mirai.contact.Friend;
 
 public class AIReplyGroupPlainTextHandler extends AbstractGroupPlainTextHandler {
-    protected AIReplyGroupPlainTextHandler(Friend masterFriend) {
+    public AIReplyGroupPlainTextHandler(Friend masterFriend) {
         super(masterFriend);
     }
 

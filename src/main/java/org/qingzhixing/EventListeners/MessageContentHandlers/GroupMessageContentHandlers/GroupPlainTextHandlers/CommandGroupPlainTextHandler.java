@@ -5,10 +5,10 @@ import net.mamoe.mirai.message.data.*;
 import org.apache.log4j.Logger;
 import org.qingzhixing.Utilities;
 
-public class CommandGroupPlainTextHandler extends AbstractGroupPlainTextHandler {
+public final class CommandGroupPlainTextHandler extends AbstractGroupPlainTextHandler {
     private static final Logger logger = Logger.getLogger(CommandGroupPlainTextHandler.class);
 
-    protected CommandGroupPlainTextHandler(Friend masterFriend) {
+    public CommandGroupPlainTextHandler(Friend masterFriend) {
         super(masterFriend);
     }
 

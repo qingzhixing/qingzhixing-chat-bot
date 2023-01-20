@@ -18,16 +18,8 @@ public abstract class AbstractGroupMessageContentHandler extends AbstractMessage
         return group;
     }
 
-    public void BindContext(@NotNull Member sender, @NotNull PlainText plainText, @NotNull Group group) {
+    protected void BindContext(@NotNull Member sender, @NotNull PlainText plainText, @NotNull Group group) {
         super.BindContext(sender, plainText);
         this.group = group;
-    }
-
-    /*
-     * @return 返回 true 为 中断事件处理，事件不再往后传播给其他Handler
-     */
-    public boolean BindContextAndHandle(@NotNull Member sender, @NotNull PlainText plainText, @NotNull Group group) {
-        BindContext(sender, plainText, group);
-        return Handle();
     }
 }

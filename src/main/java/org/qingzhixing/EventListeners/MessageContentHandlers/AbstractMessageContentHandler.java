@@ -30,7 +30,7 @@ public abstract class AbstractMessageContentHandler {
         return masterFriend != null;
     }
 
-    public void BindContext(@NotNull Member sender, @NotNull Message message) {
+    protected void BindContext(@NotNull Member sender, @NotNull Message message) {
         this.sender = sender;
         this.message = message;
     }
@@ -39,12 +39,4 @@ public abstract class AbstractMessageContentHandler {
      * @return 返回 true 为 中断事件处理，事件不再往后传播给其他Handler
      */
     abstract public boolean Handle();
-
-    /*
-     * @return 返回 true 为 中断事件处理，事件不再往后传播给其他Handler
-     */
-    public boolean BindContextAndHandle(@NotNull Member sender, @NotNull Message message) {
-        BindContext(sender, message);
-        return Handle();
-    }
 }

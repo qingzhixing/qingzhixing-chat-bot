@@ -12,14 +12,22 @@ import net.mamoe.mirai.message.data.MessageContent;
 import net.mamoe.mirai.message.data.PlainText;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.qingzhixing.EventListeners.MessageContentHandlers.GroupMessageContentHandlers.GroupPlainTextHandlers.AbstractGroupPlainTextHandler;
+import org.qingzhixing.EventListeners.MessageContentHandlers.GroupMessageContentHandlers.GroupPlainTextHandlers.CommandGroupPlainTextHandler;
 import org.qingzhixing.Utilities;
+
+import java.util.ArrayList;
 
 public class SimpleEventListener extends SimpleListenerHost {
     private static final Logger logger = Logger.getLogger(SimpleEventListener.class);
     private final Friend masterFriend;
+    private final ArrayList<AbstractGroupPlainTextHandler> groupPlainTextHandlers;
 
     public SimpleEventListener(Friend master) {
         this.masterFriend = master;
+        groupPlainTextHandlers = new ArrayList<>();
+        //添加的顺序表示优先级
+        groupPlainTextHandlers.add(new CommandGroupPlainTextHandler(masterFriend));
     }
 
     @Override
@@ -42,7 +50,9 @@ public class SimpleEventListener extends SimpleListenerHost {
     }
 
     private void HandleGroupPlainText(@NotNull PlainText plainText, boolean atBot, @NotNull Member sender, @NotNull Group group) {
-
+        for (var handler : groupPlainTextHandlers) {
+            if (handler.BindContextAndHandle(sender, plainText, group, atBot)) return;
+        }
     }
 
     @EventHandler
