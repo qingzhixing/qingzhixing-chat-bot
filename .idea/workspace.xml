@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="包更改">
+    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="单独At检测，/help指令实现">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/MessageContentHandlers/AbstractGroupPlainTextHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/MessageContentHandlers/AbstractGroupPlainTextHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/MessageContentHandlers/CommandGroupPlainTextHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/MessageContentHandlers/CommandGroupPlainTextHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/SimpleEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/SimpleEventListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Utilities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +127,7 @@
       <updated>1674127461118</updated>
       <workItem from="1674127462262" duration="2497000" />
       <workItem from="1674130885456" duration="367000" />
-      <workItem from="1674131264599" duration="43640000" />
+      <workItem from="1674131264599" duration="44424000" />
     </task>
     <task id="LOCAL-00001" summary="Init and backup">
       <created>1674134140854</created>
@@ -244,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674236156656</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="单独At检测，/help指令实现">
+      <created>1674238630469</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1674238630469</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,7 +281,8 @@
     <MESSAGE value="backup" />
     <MESSAGE value="优化代码" />
     <MESSAGE value="包更改" />
-    <option name="LAST_COMMIT_MESSAGE" value="包更改" />
+    <MESSAGE value="单独At检测，/help指令实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="单独At检测，/help指令实现" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,3 +1,5 @@
+[![wakatime](https://wakatime.com/badge/user/cd8731d7-2366-4da2-8032-5bb5ad0d3122/project/01444e6f-4980-485c-9960-5a46ecb4e6d5.svg)](https://wakatime.com/badge/user/cd8731d7-2366-4da2-8032-5bb5ad0d3122/project/01444e6f-4980-485c-9960-5a46ecb4e6d5)
+
 # Qingzhixing Chat Bot
 
 自用的QQ机器人项目
