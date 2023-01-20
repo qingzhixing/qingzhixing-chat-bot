@@ -2,6 +2,7 @@ package org.qingzhixing;
 
 import net.mamoe.mirai.Bot;
 import net.mamoe.mirai.contact.Contact;
+import net.mamoe.mirai.contact.Group;
 import net.mamoe.mirai.contact.User;
 import net.mamoe.mirai.message.data.At;
 import net.mamoe.mirai.message.data.AtAll;
@@ -48,13 +49,18 @@ public final class Utilities {
         return GetMessageChainContentOf(messageChain, messageType).size() == 0;
     }
 
-    public static boolean CheckMessageChainAtUser(MessageChain messageChain, User user) {
+    public static boolean CheckMessageChainAtUser(@NotNull MessageChain messageChain, @NotNull User user, @NotNull Group group) {
+//        logger.debug("Checking message chain at user:" + user.getNick() + " user id:" + user.getId());
         var contents = GetMessageChainContentOf(messageChain, At.class);
         for (var content : contents) {
-            if (((At) content).getTarget() == user.getId()) {
+            var atContent = (At) content;
+//            logger.debug("存在At: " + atContent.getDisplay(group) + "At content: " + atContent.contentToString());
+            if (atContent.getTarget() == user.getId()) {
+//                logger.debug("找到艾特User:" + user.getNick() + " user id:" + user.getId());
                 return true;
             }
         }
+//        logger.debug("没找到At User:" + user.getNick() + " user id:" + user.getId());
         return false;
     }
 
@@ -62,13 +68,17 @@ public final class Utilities {
         return CheckMessageChainExistsContentOf(messageChain, AtAll.class);
     }
 
-    public static net.mamoe.mirai.message.data.Image URLToImage(String url, Bot bot) {
+    public static net.mamoe.mirai.message.data.Image URLToImage(String url, Bot bot) throws RuntimeException {
+//        if (true)
+//            throw new RuntimeException("Test-中断Image获取");
+
         InputStream imageInputStream = null;
         net.mamoe.mirai.message.data.Image image = null;
         try {
             imageInputStream = new URL(url).openStream();
         } catch (IOException e) {
             logger.error("初始化imageInputStream时出错:" + e.getMessage(), e);
+            throw new RuntimeException(e.getMessage());
         }
         if (imageInputStream == null) {
             logger.error("imageInputStream为null");

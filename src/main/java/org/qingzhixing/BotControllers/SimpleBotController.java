@@ -34,10 +34,6 @@ public class SimpleBotController extends AbstractBotController {
         if (masterFriend != null) {
             masterFriend.sendMessage("重大消息！青纸星的bot上线辣！😍");
             masterFriend.sendMessage(PokeMessage.ChuoYiChuo);
-            masterFriend.sendMessage(PokeMessage.ChuoYiChuo);
-            masterFriend.sendMessage(PokeMessage.ChuoYiChuo);
-            masterFriend.sendMessage(PokeMessage.ChuoYiChuo);
-            masterFriend.sendMessage(PokeMessage.ChuoYiChuo);
         } else {
             logger.warn("没找到bot好友列表中master的QQ,无法通知其上线");
         }
