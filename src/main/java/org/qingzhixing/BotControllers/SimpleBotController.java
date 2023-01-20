@@ -16,7 +16,7 @@ public class SimpleBotController extends AbstractBotController {
     private Friend masterFriend;
 
     public SimpleBotController(@NotNull Bot bot, @NotNull Account masterAccount) {
-        BindBot(bot);
+        super(bot);
         this.masterAccount = masterAccount;
     }
 

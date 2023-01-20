@@ -7,7 +7,9 @@ import net.mamoe.mirai.contact.Member;
 import net.mamoe.mirai.event.EventHandler;
 import net.mamoe.mirai.event.SimpleListenerHost;
 import net.mamoe.mirai.event.events.GroupMessageEvent;
-import net.mamoe.mirai.message.data.*;
+import net.mamoe.mirai.message.data.FlashImage;
+import net.mamoe.mirai.message.data.MessageContent;
+import net.mamoe.mirai.message.data.PlainText;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.qingzhixing.Utilities;
@@ -40,42 +42,7 @@ public class SimpleEventListener extends SimpleListenerHost {
     }
 
     private void HandleGroupPlainText(@NotNull PlainText plainText, boolean atBot, @NotNull Member sender, @NotNull Group group) {
-        var text = plainText.getContent();
 
-        if (atBot && text.contains("我是谁")) {
-            Image avatar = null;
-            try {
-                avatar = Utilities.URLToImage(sender.getAvatarUrl(), sender.getBot());
-            } catch (RuntimeException e) {
-                var logErrorMessage = " 获取图片出错啦TT！";
-                logger.error(logErrorMessage);
-                var replyChain = MessageUtils.newChain(
-                        new At(sender.getId()),
-                        new PlainText(logErrorMessage)
-                );
-                group.sendMessage(replyChain);
-                //通知master
-                if (masterFriend != null) {
-                    masterFriend.sendMessage("" +
-                            "用户使用指令'我是谁'时出现错误!" +
-                            "\n用户昵称:" + sender.getNick() +
-                            "\n用户ID:" + sender.getId() +
-                            "\n群名:" + group.getName() +
-                            "\n群号:" + group.getId() +
-                            "\n错误原因:" + logErrorMessage
-                    );
-                }
-                return;
-            }
-            MessageChain replyChain = MessageUtils.newChain(
-                    new At(sender.getId()),
-                    new PlainText(" 头像:"),
-                    avatar,
-                    new PlainText("昵称: \"" + sender.getNick() + "\"\n"),
-                    new PlainText("ID: " + sender.getId())
-            );
-            group.sendMessage(replyChain);
-        }
     }
 
     @EventHandler

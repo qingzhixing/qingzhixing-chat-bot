@@ -10,6 +10,10 @@ public abstract class AbstractBotController {
     private static final Logger logger = Logger.getLogger(AbstractBotController.class);
     protected Bot bot;
 
+    AbstractBotController(@NotNull Bot bot) {
+        this.bot = bot;
+    }
+
     public void BindBot(@NotNull Bot bot) {
         this.bot = bot;
     }
