@@ -46,7 +46,7 @@ public final class Utilities {
 
     public static <T extends MessageContent> boolean
     CheckMessageChainExistsContentOf(MessageChain messageChain, Class<T> messageType) {
-        return GetMessageChainContentOf(messageChain, messageType).size() == 0;
+        return GetMessageChainContentOf(messageChain, messageType).size() != 0;
     }
 
     public static boolean CheckMessageChainAtUser(@NotNull MessageChain messageChain, @NotNull User user, @NotNull Group group) {
@@ -62,6 +62,12 @@ public final class Utilities {
         }
 //        logger.debug("没找到At User:" + user.getNick() + " user id:" + user.getId());
         return false;
+    }
+
+    public static boolean CheckMessageChainOnlyAtUser(@NotNull MessageChain messageChain, @NotNull User user, @NotNull Group group) {
+        var atMessageContent = GetMessageChainContentOf(messageChain, At.class);
+        return atMessageContent.size() == 1 &&
+                ((At) atMessageContent.get(0)).getTarget() == user.getId();
     }
 
     public static boolean CheckMessageChainAtAll(MessageChain messageChain) {

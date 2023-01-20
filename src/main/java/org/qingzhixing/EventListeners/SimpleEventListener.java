@@ -49,9 +49,9 @@ public class SimpleEventListener extends SimpleListenerHost {
         masterFriend.sendMessage("发送者 昵称:\"" + sender.getNick() + "\" QQID:" + sender.getId());
     }
 
-    private void HandleGroupPlainText(@NotNull PlainText plainText, boolean atBot, @NotNull Member sender, @NotNull Group group) {
+    private void HandleGroupPlainText(@NotNull Member sender, @NotNull PlainText plainText, @NotNull Group group, boolean atBot, boolean isOnlyAtBot) {
         for (var handler : groupPlainTextHandlers) {
-            if (handler.BindContextAndHandle(sender, plainText, group, atBot)) return;
+            if (handler.BindContextAndHandle(sender, plainText, group, atBot, isOnlyAtBot)) return;
         }
     }
 
@@ -62,14 +62,15 @@ public class SimpleEventListener extends SimpleListenerHost {
         var messageChain = event.getMessage();
         var bot = event.getBot();
 
-        boolean atBot = Utilities.CheckMessageChainAtUser(messageChain, bot.getAsFriend(), group);
+        boolean isAtBot = Utilities.CheckMessageChainAtUser(messageChain, bot.getAsFriend(), group);
+        boolean isOnlyAtBot = Utilities.CheckMessageChainOnlyAtUser(messageChain, bot.getAsFriend(), group);
         messageChain.forEach(message -> {
             if (!(message instanceof MessageContent)) return;
             MessageContent messageContent = (MessageContent) message;
             if (messageContent instanceof FlashImage) {
                 HandleFlashImageMessage((FlashImage) messageContent, sender);
             } else if (messageContent instanceof PlainText) {
-                HandleGroupPlainText((PlainText) message, atBot, sender, group);
+                HandleGroupPlainText(sender, (PlainText) message, group, isAtBot, isOnlyAtBot);
             }
         });
     }

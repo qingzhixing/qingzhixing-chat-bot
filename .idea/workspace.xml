@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="backup">
+    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="包更改">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/MessageContentHandlers/AbstractMessageContentHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/MessageContentHandlers/AbstractMessageContentHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/MessageContentHandlers/GroupMessageContentHandlers/AbstractGroupMessageContentHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/MessageContentHandlers/GroupMessageContentHandlers/AbstractGroupMessageContentHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/MessageContentHandlers/GroupMessageContentHandlers/GroupPlainTextHandlers/AIReplyGroupPlainTextHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/MessageContentHandlers/GroupMessageContentHandlers/GroupPlainTextHandlers/AIReplyGroupPlainTextHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/MessageContentHandlers/GroupMessageContentHandlers/GroupPlainTextHandlers/CommandGroupPlainTextHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/MessageContentHandlers/GroupMessageContentHandlers/GroupPlainTextHandlers/CommandGroupPlainTextHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/MessageContentHandlers/GroupMessageContentHandlers/GroupPlainTextHandlers/KeywordReplyGroupPlainText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/MessageContentHandlers/GroupMessageContentHandlers/GroupPlainTextHandlers/KeywordReplyGroupPlainText.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/MessageContentHandlers/AbstractGroupPlainTextHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/MessageContentHandlers/AbstractGroupPlainTextHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/MessageContentHandlers/CommandGroupPlainTextHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/MessageContentHandlers/CommandGroupPlainTextHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/SimpleEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/SimpleEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Utilities.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +130,7 @@
       <updated>1674127461118</updated>
       <workItem from="1674127462262" duration="2497000" />
       <workItem from="1674130885456" duration="367000" />
-      <workItem from="1674131264599" duration="41021000" />
+      <workItem from="1674131264599" duration="43640000" />
     </task>
     <task id="LOCAL-00001" summary="Init and backup">
       <created>1674134140854</created>
@@ -232,7 +230,21 @@
       <option name="project" value="LOCAL" />
       <updated>1674235477922</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="优化代码">
+      <created>1674235953708</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1674235953708</updated>
+    </task>
+    <task id="LOCAL-00016" summary="包更改">
+      <created>1674236156656</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1674236156656</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +275,9 @@
     <MESSAGE value="BP" />
     <MESSAGE value="迁移前备份" />
     <MESSAGE value="backup" />
-    <option name="LAST_COMMIT_MESSAGE" value="backup" />
+    <MESSAGE value="优化代码" />
+    <MESSAGE value="包更改" />
+    <option name="LAST_COMMIT_MESSAGE" value="包更改" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
