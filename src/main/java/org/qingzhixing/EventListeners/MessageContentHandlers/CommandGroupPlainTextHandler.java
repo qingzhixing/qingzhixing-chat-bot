@@ -1,4 +1,4 @@
-package org.qingzhixing.EventListeners.MessageContentHandlers.GroupMessageContentHandlers.GroupPlainTextHandlers;
+package org.qingzhixing.EventListeners.MessageContentHandlers;
 
 import net.mamoe.mirai.contact.Friend;
 import net.mamoe.mirai.message.data.*;

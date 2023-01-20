@@ -1,11 +1,10 @@
-package org.qingzhixing.EventListeners.MessageContentHandlers.GroupMessageContentHandlers.GroupPlainTextHandlers;
+package org.qingzhixing.EventListeners.MessageContentHandlers;
 
 import net.mamoe.mirai.contact.Friend;
 import net.mamoe.mirai.contact.Group;
 import net.mamoe.mirai.contact.Member;
 import net.mamoe.mirai.message.data.PlainText;
 import org.jetbrains.annotations.NotNull;
-import org.qingzhixing.EventListeners.MessageContentHandlers.GroupMessageContentHandlers.AbstractGroupMessageContentHandler;
 
 public abstract class AbstractGroupPlainTextHandler extends AbstractGroupMessageContentHandler {
     private boolean atBot;
