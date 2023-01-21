@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="test">
+    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="BP">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/MessageContentHandlers/CommandGroupPlainTextHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/MessageContentHandlers/CommandGroupPlainTextHandler.java" afterDir="false" />
     </list>
@@ -129,7 +129,7 @@
       <workItem from="1674130885456" duration="367000" />
       <workItem from="1674131264599" duration="45936000" />
       <workItem from="1674275997582" duration="643000" />
-      <workItem from="1674294343737" duration="2106000" />
+      <workItem from="1674294343737" duration="5603000" />
     </task>
     <task id="LOCAL-00001" summary="Init and backup">
       <created>1674134140854</created>
@@ -271,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674239618592</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="BP">
+      <created>1674297367134</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1674297367134</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,7 +306,6 @@
     <MESSAGE value="Rename" />
     <MESSAGE value="闪照截获" />
     <MESSAGE value="@Bot 我是谁?" />
-    <MESSAGE value="BP" />
     <MESSAGE value="迁移前备份" />
     <MESSAGE value="backup" />
     <MESSAGE value="优化代码" />
@@ -307,7 +313,8 @@
     <MESSAGE value="单独At检测，/help指令实现" />
     <MESSAGE value="Edit Readme.md" />
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="BP" />
+    <option name="LAST_COMMIT_MESSAGE" value="BP" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

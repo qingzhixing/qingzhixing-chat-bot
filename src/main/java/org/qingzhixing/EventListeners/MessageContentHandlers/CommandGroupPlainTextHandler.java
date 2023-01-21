@@ -20,6 +20,7 @@ public final class CommandGroupPlainTextHandler extends AbstractGroupPlainTextHa
         //顺序代表优先级
         matchers.add(this::CommandHandler_Help);
         matchers.add(this::CommandHandler_WoShiShui);
+        matchers.add(this::CommandHandler_QuestionAnswer);
     }
 
 
@@ -36,7 +37,7 @@ public final class CommandGroupPlainTextHandler extends AbstractGroupPlainTextHa
         var text = getPlainTextContent();
 
         if (!isOnlyAtBot() || !text.contains("我是谁")) return false;
-        Image avatar = null;
+        Image avatar;
         try {
             avatar = Utilities.URLToImage(sender().getAvatarUrl(), sender().getBot());
         } catch (RuntimeException e) {
@@ -73,15 +74,34 @@ public final class CommandGroupPlainTextHandler extends AbstractGroupPlainTextHa
         var replyText = new PlainText(
                 "\n目前可以使用的指令:\n" +
                         "[@bot] 我是谁 - 返回头像、昵称与 QQ ID\n" +
-                        "[@bot] /help - 帮助"
+                        "[@bot] /help - 帮助\n" +
+                        "[@bot] <你问的问题 - 句子中存在'?','？','吗','嘛','么'> - 返回机器人的有趣回答\n" +
+                        "    tips:不艾特有10%几率自动回答"
         );
         AtThenReply(replyText, sender(), group());
         return true;
     }
 
     private boolean CommandHandler_QuestionAnswer() {
+        //没有AtBot则90%概率不回答
+        if (!isAtBot() && Math.random() < 0.9) {
+            return false;
+        }
         var originalText = getPlainTextContent();
-        var sentences = originalText.split("");
+        var workedText = originalText;
+        workedText = workedText.replace("？", "");
+        workedText = workedText.replace("?", "");
+        workedText = workedText.replace("嘛", "");
+        workedText = workedText.replace("吗", "");
+        workedText = workedText.replace("么", "");
+        //检测到问题则输出对应sb答案
+        if (!workedText.equals(originalText) && !workedText.equals("")) {
+            //格式化
+            workedText = workedText.trim();
+//            logger.debug("获取到问题: " + originalText + "\n回答: " + workedText);
+            group().sendMessage(workedText);
+            return true;
+        }
         return false;
     }
 
