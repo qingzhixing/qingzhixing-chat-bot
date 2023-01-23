@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="KeywordReplyGroupPlainText.java">
+    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="关键词回复完成">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Keywords/KeywordsLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Keywords/KeywordsLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/MessageContentHandlers/KeywordReplyGroupPlainText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/MessageContentHandlers/KeywordReplyGroupPlainText.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/SimpleEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/SimpleEventListener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +130,7 @@
       <workItem from="1674131264599" duration="45936000" />
       <workItem from="1674275997582" duration="643000" />
       <workItem from="1674294343737" duration="6234000" />
-      <workItem from="1674462377922" duration="12246000" />
+      <workItem from="1674462377922" duration="12420000" />
     </task>
     <task id="LOCAL-00001" summary="Init and backup">
       <created>1674134140854</created>
@@ -315,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674474644833</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="关键词回复完成">
+      <created>1674476883374</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1674476883374</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -356,7 +362,8 @@
     <MESSAGE value="keyword解析备份" />
     <MESSAGE value="重构Settings.java" />
     <MESSAGE value="KeywordReplyGroupPlainText.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="KeywordReplyGroupPlainText.java" />
+    <MESSAGE value="关键词回复完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="关键词回复完成" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

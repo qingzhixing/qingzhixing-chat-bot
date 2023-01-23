@@ -64,6 +64,9 @@ public class SimpleEventListener extends SimpleListenerHost {
         var messageChain = event.getMessage();
         var bot = event.getBot();
 
+        //不处理自己的事件
+        if (sender.getId() == bot.getId()) return;
+
         boolean isAtBot = Utilities.CheckMessageChainAtUser(messageChain, bot.getAsFriend(), group);
         boolean isOnlyAtBot = Utilities.CheckMessageChainOnlyAtUser(messageChain, bot.getAsFriend(), group);
         messageChain.forEach(message -> {
