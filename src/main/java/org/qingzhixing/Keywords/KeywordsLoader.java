@@ -1,5 +1,6 @@
 package org.qingzhixing.Keywords;
 
+import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.log4j.Logger;
 import org.jdom.Element;
@@ -48,7 +49,7 @@ public class KeywordsLoader {
                 weight = Integer.parseInt(weightAttribute.getValue());
             }
             logger.info("检测到tagText: \"" + tagText + "\" weight: " + weight);
-            answer.add(new Pair<>(tagText, weight));
+            answer.add(new ImmutablePair<>(tagText, weight));
         });
         return answer;
     }
