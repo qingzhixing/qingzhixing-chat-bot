@@ -19,9 +19,13 @@ public class KeywordsLoader {
     private static final Logger logger = Logger.getLogger(KeywordsLoader.class);
     private final PriorityQueue<Keyword> keywords;
 
-    KeywordsLoader(@NotNull String keywordsFilePath) {
+    public KeywordsLoader(@NotNull String keywordsFilePath) {
         keywords = new PriorityQueue<>(Comparator.reverseOrder());
         ParseKeywordsFile(keywordsFilePath);
+    }
+
+    public PriorityQueue<Keyword> keywords() {
+        return keywords;
     }
 
     //非法返回null
@@ -31,7 +35,7 @@ public class KeywordsLoader {
             logger.error("错误数据:不存在 \"" + target + "\" 标签");
             return null;
         }
-        var targetText = targetElement.getText();
+        var targetText = targetElement.getText().trim();
         var weightAttribute = targetElement.getAttribute("weight");
         var weight = 0;
         if (weightAttribute == null) {

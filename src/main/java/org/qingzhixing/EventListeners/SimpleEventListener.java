@@ -14,6 +14,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.qingzhixing.MessageContentHandlers.AbstractGroupPlainTextHandler;
 import org.qingzhixing.MessageContentHandlers.CommandGroupPlainTextHandler;
+import org.qingzhixing.MessageContentHandlers.KeywordReplyGroupPlainText;
 import org.qingzhixing.Utilities;
 
 import java.util.ArrayList;
@@ -28,6 +29,7 @@ public class SimpleEventListener extends SimpleListenerHost {
         groupPlainTextHandlers = new ArrayList<>();
         //添加的顺序表示优先级
         groupPlainTextHandlers.add(new CommandGroupPlainTextHandler(masterFriend));
+        groupPlainTextHandlers.add(new KeywordReplyGroupPlainText(masterFriend));
     }
 
     @Override
