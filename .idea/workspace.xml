@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="readme.md">
+    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="add keywords">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/keywords.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/keywords.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Keywords/KeywordsLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Keywords/KeywordsLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/MessageContentHandlers/CommandGroupPlainTextHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/MessageContentHandlers/CommandGroupPlainTextHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +131,7 @@
       <workItem from="1674131264599" duration="45936000" />
       <workItem from="1674275997582" duration="643000" />
       <workItem from="1674294343737" duration="6234000" />
-      <workItem from="1674462377922" duration="15615000" />
+      <workItem from="1674462377922" duration="17214000" />
     </task>
     <task id="LOCAL-00001" summary="Init and backup">
       <created>1674134140854</created>
@@ -370,7 +371,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674482275885</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="add keywords">
+      <created>1674485624705</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1674485624705</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -388,7 +396,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="settings文件选择" />
     <MESSAGE value="bot登陆与上线通知" />
     <MESSAGE value="Rename" />
     <MESSAGE value="闪照截获" />
@@ -413,7 +420,8 @@
     <MESSAGE value="add keyword" />
     <MESSAGE value="修复无javafx的问题，test" />
     <MESSAGE value="readme.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="readme.md" />
+    <MESSAGE value="add keywords" />
+    <option name="LAST_COMMIT_MESSAGE" value="add keywords" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

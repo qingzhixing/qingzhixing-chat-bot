@@ -31,7 +31,7 @@ public class KeywordsLoader {
 
     //非法返回null
     private List<Pair<String, Integer>> ParseTagAndGetWeightFromElement(@NotNull Element element, @NotNull String tag) {
-        logger.debug("解析tag中:" + tag);
+//        logger.debug("解析tag中:" + tag);
         List<Element> tagElements = element.getChildren(tag);
         if (tagElements.isEmpty()) {
             logger.error("错误数据:不存在 \"" + tag + "\" 标签");
@@ -48,7 +48,7 @@ public class KeywordsLoader {
             } else {
                 weight = Integer.parseInt(weightAttribute.getValue());
             }
-            logger.info("检测到tagText: \"" + tagText + "\" weight: " + weight);
+//            logger.info("检测到tagText: \"" + tagText + "\" weight: " + weight);
             answer.add(new ImmutablePair<>(tagText, weight));
         });
         return answer;
@@ -56,7 +56,7 @@ public class KeywordsLoader {
 
     //非法返回null
     private List<Keyword.InnerData> ParseRepliesFromKeywordDataElement(@NotNull Element keywordDataElement) {
-        logger.info("解析replies中");
+//        logger.info("解析replies中");
         var repliesElement = keywordDataElement.getChild("replies");
         if (repliesElement == null) {
             logger.warn("不存在replies标签，数据为非法，忽略该标签");
@@ -75,7 +75,7 @@ public class KeywordsLoader {
             }
             var replyText = replyPair.getKey();
             var replyWeight = replyPair.getValue();
-            logger.info("解析到reply:\"" + replyText + "\" replyWeight:" + replyWeight);
+//            logger.info("解析到reply:\"" + replyText + "\" replyWeight:" + replyWeight);
             replies.add(new Keyword.InnerData(replyText, replyWeight));
 
         });
@@ -108,7 +108,7 @@ public class KeywordsLoader {
                 return;
             }
             keywordDatas.forEach(keywordData -> {
-                logger.info("正在解析一个keywordData标签");
+//                logger.info("正在解析一个keywordData标签");
                 var keywordPairs = ParseTagAndGetWeightFromElement(keywordData, "keyword");
                 Pair<String, Integer> keywordPair;
                 if (keywordPairs == null) {
@@ -122,7 +122,7 @@ public class KeywordsLoader {
                 }
                 var keywordText = keywordPair.getKey();
                 var keywordWeight = keywordPair.getValue();
-                logger.info("解析到keyword: \"" + keywordText + "\" weight: " + keywordWeight);
+//                logger.info("解析到keyword: \"" + keywordText + "\" weight: " + keywordWeight);
 
                 var replies = ParseRepliesFromKeywordDataElement(keywordData);
                 if (replies == null) {

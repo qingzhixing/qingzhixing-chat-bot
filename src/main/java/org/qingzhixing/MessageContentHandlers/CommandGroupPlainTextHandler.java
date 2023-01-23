@@ -21,6 +21,7 @@ public final class CommandGroupPlainTextHandler extends AbstractGroupPlainTextHa
         matchers.add(this::CommandHandler_Help);
         matchers.add(this::CommandHandler_WoShiShui);
         matchers.add(this::CommandHandler_QuestionAnswer);
+        matchers.add(this::CommandHandler_AtBot);
     }
 
 
@@ -78,7 +79,8 @@ public final class CommandGroupPlainTextHandler extends AbstractGroupPlainTextHa
                         "[@bot] 我是谁 - 返回头像、昵称与 QQ ID\n" +
                         "[@bot] /help - 帮助\n" +
                         "[@bot] <你问的问题 - 句子中存在'?','？','吗','嘛','么'> - 返回机器人的有趣回答\n" +
-                        "    tips:不艾特有10%几率自动回答"
+                        "    tips:不艾特有10%几率自动回答\n" +
+                        "[@bot] - 别艾特我啦！不止At bot有50%几率回复，否则为10%\n"
         );
         AtThenReply(replyText, sender(), group());
         return true;
@@ -89,13 +91,16 @@ public final class CommandGroupPlainTextHandler extends AbstractGroupPlainTextHa
         if (!isAtBot() && Math.random() < 0.9) {
             return false;
         }
+        //否则50几率回答
+        if (Math.random() < 0.5) {
+            return false;
+        }
         var originalText = getPlainTextContent();
         var workedText = originalText;
         workedText = workedText.replace("？", "");
         workedText = workedText.replace("?", "");
         workedText = workedText.replace("嘛", "");
         workedText = workedText.replace("吗", "");
-        workedText = workedText.replace("么", "");
         //检测到问题则输出对应sb答案
         if (!workedText.equals(originalText) && !workedText.equals("")) {
             //格式化
@@ -103,6 +108,24 @@ public final class CommandGroupPlainTextHandler extends AbstractGroupPlainTextHa
 //            logger.debug("获取到问题: " + originalText + "\n回答: " + workedText);
             group().sendMessage(workedText);
             return true;
+        }
+        return false;
+    }
+
+    private boolean CommandHandler_AtBot() {
+        if (!isAtBot()) return false;
+        //不止艾特bot则50%几率回复
+        if (!isOnlyAtBot()) {
+            if (Math.random() < 0.5) {
+                AtThenReply(new PlainText("  艾特我干嘛呀！！！！"), sender(), group());
+                return true;
+            }
+        } else {
+            //单独atBot有10%几率回复
+            if (Math.random() < 0.1) {
+                AtThenReply(new PlainText("  你干嘛！不许艾特我啦！！🤯"), sender(), group());
+                return true;
+            }
         }
         return false;
     }
