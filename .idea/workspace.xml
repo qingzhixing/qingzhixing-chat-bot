@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="BP">
+    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="弱智机器人问题回答命令完成">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Keywords/Keyword.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/MessageContentHandlers/CommandGroupPlainTextHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/MessageContentHandlers/CommandGroupPlainTextHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/MessageContentHandlers/AIReplyGroupPlainTextHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/MessageContentHandlers/AIReplyGroupPlainTextHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/MessageContentHandlers/AbstractGroupMessageContentHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/MessageContentHandlers/AbstractGroupMessageContentHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/MessageContentHandlers/AbstractGroupPlainTextHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/MessageContentHandlers/AbstractGroupPlainTextHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/MessageContentHandlers/AbstractMessageContentHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/MessageContentHandlers/AbstractMessageContentHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/MessageContentHandlers/CommandGroupPlainTextHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/MessageContentHandlers/CommandGroupPlainTextHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/MessageContentHandlers/KeywordReplyGroupPlainText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/MessageContentHandlers/KeywordReplyGroupPlainText.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/SimpleEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/SimpleEventListener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +136,8 @@
       <workItem from="1674130885456" duration="367000" />
       <workItem from="1674131264599" duration="45936000" />
       <workItem from="1674275997582" duration="643000" />
-      <workItem from="1674294343737" duration="5603000" />
+      <workItem from="1674294343737" duration="6234000" />
+      <workItem from="1674462377922" duration="3308000" />
     </task>
     <task id="LOCAL-00001" summary="Init and backup">
       <created>1674134140854</created>
@@ -278,7 +286,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674297367134</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="弱智机器人问题回答命令完成">
+      <created>1674328815157</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1674328815157</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,7 +329,8 @@
     <MESSAGE value="Edit Readme.md" />
     <MESSAGE value="test" />
     <MESSAGE value="BP" />
-    <option name="LAST_COMMIT_MESSAGE" value="BP" />
+    <MESSAGE value="弱智机器人问题回答命令完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="弱智机器人问题回答命令完成" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

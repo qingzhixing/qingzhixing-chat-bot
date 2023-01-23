@@ -12,8 +12,8 @@ import net.mamoe.mirai.message.data.MessageContent;
 import net.mamoe.mirai.message.data.PlainText;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.qingzhixing.EventListeners.MessageContentHandlers.AbstractGroupPlainTextHandler;
-import org.qingzhixing.EventListeners.MessageContentHandlers.CommandGroupPlainTextHandler;
+import org.qingzhixing.MessageContentHandlers.AbstractGroupPlainTextHandler;
+import org.qingzhixing.MessageContentHandlers.CommandGroupPlainTextHandler;
 import org.qingzhixing.Utilities;
 
 import java.util.ArrayList;

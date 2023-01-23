@@ -1,4 +1,4 @@
-package org.qingzhixing.EventListeners.MessageContentHandlers;
+package org.qingzhixing.MessageContentHandlers;
 
 import net.mamoe.mirai.contact.Friend;
 import net.mamoe.mirai.message.data.Image;
