@@ -8,9 +8,15 @@
 
 将 src/main/resources/settings.xml 中内容填充完整即可  
 也可以复制粘贴为settings-private.xml,与settings.xml等价
-优先读取settings-private.xml
+优先读取settings-private.xml  
+关键词回复文件在同目录下keywords.xml中，也可以写在keywords-private.xml中
 
 ## 如何运行
+
+先进入src/main/resources/下填充好 settings.xml 与 keywords.xml
+> settings-private.xml , keywords-private.xml 分别等价于 settings.xml 与 keywords.xml
+
+之后打包:
 
 ```shell
 maven package
