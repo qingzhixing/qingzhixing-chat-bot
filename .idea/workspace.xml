@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="更改command handler中断设置">
+    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="修复指令匹配的bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/MessageContentHandlers/CommandGroupPlainTextHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/MessageContentHandlers/CommandGroupPlainTextHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/keywords.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/keywords.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +130,7 @@
       <workItem from="1674131264599" duration="45936000" />
       <workItem from="1674275997582" duration="643000" />
       <workItem from="1674294343737" duration="6234000" />
-      <workItem from="1674462377922" duration="12732000" />
+      <workItem from="1674462377922" duration="12864000" />
     </task>
     <task id="LOCAL-00001" summary="Init and backup">
       <created>1674134140854</created>
@@ -335,7 +335,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674477124976</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="修复指令匹配的bug">
+      <created>1674477328811</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1674477328811</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,7 +360,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="读取文件成功" />
     <MESSAGE value="Settings.Debug_ConsoleOutputSettings" />
     <MESSAGE value="AbstractBotController.java&#10;Test_BotController.java&#10;EasyBotFactory.java&#10;BotGroupController.java&#10;added" />
     <MESSAGE value="Utilities.java" />
@@ -378,7 +384,8 @@
     <MESSAGE value="关键词回复完成" />
     <MESSAGE value="bot不能处理自己发消息的事件" />
     <MESSAGE value="更改command handler中断设置" />
-    <option name="LAST_COMMIT_MESSAGE" value="更改command handler中断设置" />
+    <MESSAGE value="修复指令匹配的bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复指令匹配的bug" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

@@ -18,11 +18,16 @@
     </keywordData>
     <keywordData>
         <keyword>
-            test2
+            电风扇
         </keyword>
         <!--空数据将会报错输出-->
         <replies>
-            <reply/>
+            <reply>
+                。?
+            </reply>
+            <reply>
+                你干什么？
+            </reply>
         </replies>
     </keywordData>
 </keyword>
