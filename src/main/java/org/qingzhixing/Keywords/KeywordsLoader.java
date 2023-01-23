@@ -29,40 +29,54 @@ public class KeywordsLoader {
     }
 
     //非法返回null
-    private Pair<String, Integer> ParseTagAndGetWeightFromElement(@NotNull Element element, @NotNull String target) {
-        var targetElement = element.getChild(target);
-        if (targetElement == null) {
-            logger.error("错误数据:不存在 \"" + target + "\" 标签");
+    private List<Pair<String, Integer>> ParseTagAndGetWeightFromElement(@NotNull Element element, @NotNull String tag) {
+        logger.debug("解析tag中:" + tag);
+        List<Element> tagElements = element.getChildren(tag);
+        if (tagElements.isEmpty()) {
+            logger.error("错误数据:不存在 \"" + tag + "\" 标签");
             return null;
         }
-        var targetText = targetElement.getText().trim();
-        var weightAttribute = targetElement.getAttribute("weight");
-        var weight = 0;
-        if (weightAttribute == null) {
-            weight = 1;
-        } else {
-            weight = Integer.parseInt(weightAttribute.getValue());
-        }
-        return new Pair<String, Integer>(targetText, weight);
+        ArrayList<Pair<String, Integer>> answer = new ArrayList<>();
+
+        tagElements.forEach(tagElement -> {
+            var tagText = tagElement.getText().trim();
+            var weightAttribute = tagElement.getAttribute("weight");
+            var weight = 0;
+            if (weightAttribute == null) {
+                weight = 1;
+            } else {
+                weight = Integer.parseInt(weightAttribute.getValue());
+            }
+            logger.info("tagText: \"" + tagText + "\" weight: " + weight);
+            answer.add(new Pair<>(tagText, weight));
+        });
+        return answer;
     }
 
     //非法返回null
     private List<Keyword.InnerData> ParseRepliesFromKeywordDataElement(@NotNull Element keywordDataElement) {
-        List<Element> repliesElements = keywordDataElement.getChildren("replies");
-        if (repliesElements.isEmpty()) {
+        logger.info("解析replies中");
+        var repliesElement = keywordDataElement.getChild("replies");
+        if (repliesElement == null) {
             logger.warn("不存在replies标签，数据为非法，忽略该标签");
             return null;
         }
         var replies = new ArrayList<Keyword.InnerData>();
-        repliesElements.forEach(replyElement -> {
-            var replyPair = ParseTagAndGetWeightFromElement(replyElement, "reply");
-            if (replyPair == null || replyPair.getKey().equals("")) {
-                logger.warn("reply标签不存在或为空,忽略该reply");
+        var replyPairs = ParseTagAndGetWeightFromElement(repliesElement, "reply");
+        if (replyPairs == null) {
+            logger.error("没有找到任何reply标签，该replies标签非法，解析该关键词失败");
+            return null;
+        }
+        replyPairs.forEach(replyPair -> {
+            if (replyPair.getKey().equals("")) {
+                logger.warn("该reply为空,忽略该reply");
                 return;
             }
             var replyText = replyPair.getKey();
             var replyWeight = replyPair.getValue();
+            logger.info("解析到reply:\"" + replyText + "\" replyWeight:" + replyWeight);
             replies.add(new Keyword.InnerData(replyText, replyWeight));
+
         });
         if (replies.size() == 0) {
             logger.warn("该keywordData中不存在合法reply");
@@ -73,6 +87,7 @@ public class KeywordsLoader {
 
 
     private void ParseKeywordsFile(@NotNull String keywordsFilePath) {
+        logger.info("解析关键词文件中...");
         URL keywordsURL;
         try {
             keywordsURL = Utilities.GetCurrentJarResourceURL(keywordsFilePath);
@@ -92,13 +107,21 @@ public class KeywordsLoader {
                 return;
             }
             keywordDatas.forEach(keywordData -> {
-                var keywordPair = ParseTagAndGetWeightFromElement(keywordData, "keyword");
-                if (keywordPair == null || keywordPair.getKey().equals("")) {
-                    logger.warn("keyword标签不存在或为空,忽略该keywordData");
+                logger.info("正在解析一个keywordData标签");
+                var keywordPairs = ParseTagAndGetWeightFromElement(keywordData, "keyword");
+                Pair<String, Integer> keywordPair;
+                if (keywordPairs == null) {
+                    logger.warn("keyword标签不存在,忽略该keywordData");
+                    return;
+                }
+                keywordPair = keywordPairs.get(0);
+                if (keywordPair.getKey().equals("")) {
+                    logger.warn("keyword标签为空,忽略该keywordData");
                     return;
                 }
                 var keywordText = keywordPair.getKey();
                 var keywordWeight = keywordPair.getValue();
+                logger.info("解析到keyword: \"" + keywordText + "\" weight: " + keywordWeight);
 
                 var replies = ParseRepliesFromKeywordDataElement(keywordData);
                 if (replies == null) {
@@ -106,7 +129,9 @@ public class KeywordsLoader {
                     return;
                 }
 
-                keywords.add(new Keyword(new Keyword.InnerData(keywordText, keywordWeight), replies));
+                var keywordObject = new Keyword(new Keyword.InnerData(keywordText, keywordWeight), replies);
+                keywords.add(keywordObject);
+                logger.info("解析到Keyword对象:\n" + keywordObject);
             });
         } catch (IOException | JDOMException e) {
             throw new RuntimeException(e);

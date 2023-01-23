@@ -11,7 +11,7 @@ public class KeywordReplyGroupPlainText extends AbstractGroupPlainTextHandler {
 
     public KeywordReplyGroupPlainText(Friend masterFriend) {
         super(masterFriend);
-        keywords = new KeywordsLoader("./keywords.xml").keywords();
+        keywords = new KeywordsLoader("/keywords.xml").keywords();
     }
 
     //成功匹配则中断，返回true
