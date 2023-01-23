@@ -1,7 +1,6 @@
 package org.qingzhixing;
 
 import org.apache.log4j.Logger;
-import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jdom.input.SAXBuilder;
@@ -23,11 +22,11 @@ public class Settings {
         ParseSettingsFile(settingsFilePath);
     }
 
-    public ArrayList<Account> getBotAccountList() {
+    public ArrayList<Account> botAccountList() {
         return botAccountList;
     }
 
-    public Account getMasterAccount() {
+    public Account masterAccount() {
         return masterAccount;
     }
 
@@ -35,19 +34,19 @@ public class Settings {
         URL settingsURL;
         try {
             settingsURL = Utilities.GetCurrentJarResourceURL(settingsFilePath);
-        } catch (Exception e) {
+        } catch (RuntimeException e) {
             logger.error("Unable to load settings.Reason: " + e.getMessage(), e);
             return;
         }
 
         //使用SAXBuilder解析xml
-        SAXBuilder builder = new SAXBuilder();
+        var builder = new SAXBuilder();
         try {
-            Document document = builder.build(settingsURL);
-            Element rootElement = document.getRootElement();
+            var document = builder.build(settingsURL);
+            var rootElement = document.getRootElement();
 
             //parse bot settings
-            Element botSettingsElement = rootElement.getChild("botSettings");
+            var botSettingsElement = rootElement.getChild("botSettings");
             List<Element> botAccountElements = botSettingsElement.getChildren("account");
             botAccountElements.forEach(element -> {
                 Element botQQIDElement = element.getChild("botQQID");

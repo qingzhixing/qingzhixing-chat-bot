@@ -11,9 +11,9 @@ public class BotGroupController {
 
     public BotGroupController(@NotNull Settings settings) {
         botControllers = new ArrayList<>();
-        settings.getBotAccountList().forEach(botAccount -> {
+        settings.botAccountList().forEach(botAccount -> {
             var bot = EasyBotFactory.newBot(botAccount);
-            botControllers.add(new SimpleBotController(bot, settings.getMasterAccount()));
+            botControllers.add(new SimpleBotController(bot, settings.masterAccount()));
         });
     }
 

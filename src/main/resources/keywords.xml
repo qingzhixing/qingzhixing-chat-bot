@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<keyword>
+    <keywordData>
+        <!--不写weight默认为1-->
+        <keyword weight="1">
+            test
+        </keyword>
+        <replies>
+            <reply weight="1">
+                Hello,World!
+            </reply>
+
+            <!--不写weight默认为1-->
+            <reply>
+                hello,world!
+            </reply>
+        </replies>
+    </keywordData>
+    <keywordData>
+        <keyword>
+            test2
+        </keyword>
+        <!--空数据将会报错输出-->
+        <replies>
+            <reply/>
+        </replies>
+    </keywordData>
+</keyword>
