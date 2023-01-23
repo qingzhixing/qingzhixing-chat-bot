@@ -27,10 +27,11 @@ public final class CommandGroupPlainTextHandler extends AbstractGroupPlainTextHa
     @Override
     public boolean Handle() {
         for (var matcher : matchers) {
-            if (matcher.MatchFunction()) break;
+            if (matcher.MatchFunction()) {
+                return true;
+            }
         }
-        //中断判断
-        return true;
+        return false;
     }
 
     //返回是否成功匹配
