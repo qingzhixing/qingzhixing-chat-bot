@@ -2,7 +2,7 @@
 <keyword>
     <keywordData>
         <!--不写weight默认为1-->
-        <keyword weight="1">
+        <keyword weight="-1">
             test
         </keyword>
         <replies>
@@ -28,6 +28,36 @@
             <reply>
                 你干什么？
             </reply>
+        </replies>
+    </keywordData>
+    <keywordData>
+        <keyword>
+            ？？？？
+        </keyword>
+        <replies>
+            <reply>
+                ???
+            </reply>
+            <reply>
+                ？？？？？
+            </reply>
+            <reply>
+                草
+            </reply>
+        </replies>
+    </keywordData>
+    <keywordData>
+        <keyword weight="0">
+            草
+        </keyword>
+        <replies>
+            <reply>
+                草？
+            </reply>
+            <reply>
+                草草
+            </reply>
+            <reply>呃，草</reply>
         </replies>
     </keywordData>
 </keyword>

@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="修复无javafx的问题，test">
+    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="readme.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/keywords.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/keywords.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +130,7 @@
       <workItem from="1674131264599" duration="45936000" />
       <workItem from="1674275997582" duration="643000" />
       <workItem from="1674294343737" duration="6234000" />
-      <workItem from="1674462377922" duration="14667000" />
+      <workItem from="1674462377922" duration="15615000" />
     </task>
     <task id="LOCAL-00001" summary="Init and backup">
       <created>1674134140854</created>
@@ -363,7 +363,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674478202368</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="readme.md">
+      <created>1674482275885</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1674482275885</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -381,7 +388,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Utilities.java" />
     <MESSAGE value="settings文件选择" />
     <MESSAGE value="bot登陆与上线通知" />
     <MESSAGE value="Rename" />
@@ -406,7 +412,8 @@
     <MESSAGE value="修复指令匹配的bug" />
     <MESSAGE value="add keyword" />
     <MESSAGE value="修复无javafx的问题，test" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复无javafx的问题，test" />
+    <MESSAGE value="readme.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="readme.md" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
