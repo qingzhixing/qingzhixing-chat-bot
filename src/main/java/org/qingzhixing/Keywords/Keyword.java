@@ -17,7 +17,7 @@ public class Keyword implements Comparable<Keyword> {
         this.replies = new PriorityQueue<>(Comparator.reverseOrder());
         this.replies.addAll(
                 //剔除空回答
-                replies.parallelStream().filter(reply -> !reply.value().equals("")).collect(Collectors.toList())
+                replies.parallelStream().filter(reply -> !(reply.value().equals(""))).collect(Collectors.toList())
         );
     }
 
@@ -26,7 +26,7 @@ public class Keyword implements Comparable<Keyword> {
         this.replies = new PriorityQueue<>(Comparator.reverseOrder());
         this.replies.addAll(
                 //剔除空回答
-                replies.parallelStream().filter(reply -> !reply.equals(""))
+                replies.parallelStream().filter(reply -> !(reply.equals("")))
                         .map(InnerData::new).collect(Collectors.toList())
         );
     }

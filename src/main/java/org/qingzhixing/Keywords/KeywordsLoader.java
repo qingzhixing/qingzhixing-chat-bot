@@ -24,6 +24,7 @@ public class KeywordsLoader {
         ParseKeywordsFile(keywordsFilePath);
     }
 
+    //非法返回null
     private Pair<String, Integer> ParseTagAndGetWeightFromElement(@NotNull Element element, @NotNull String target) {
         var targetElement = element.getChild(target);
         if (targetElement == null) {
@@ -41,9 +42,10 @@ public class KeywordsLoader {
         return new Pair<String, Integer>(targetText, weight);
     }
 
+    //非法返回null
     private List<Keyword.InnerData> ParseRepliesFromKeywordDataElement(@NotNull Element keywordDataElement) {
         List<Element> repliesElements = keywordDataElement.getChildren("replies");
-        if (repliesElements == null) {
+        if (repliesElements.isEmpty()) {
             logger.warn("不存在replies标签，数据为非法，忽略该标签");
             return null;
         }
@@ -81,7 +83,7 @@ public class KeywordsLoader {
             var rootElement = document.getRootElement();
 
             List<Element> keywordDatas = rootElement.getChildren("keywordData");
-            if (keywordDatas == null) {
+            if (keywordDatas.isEmpty()) {
                 logger.warn("警告！不存在keywordData标签，将不会有关键词回答！");
                 return;
             }

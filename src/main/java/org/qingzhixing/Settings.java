@@ -14,12 +14,19 @@ import java.util.List;
 public class Settings {
     private static final Logger logger = Logger.getLogger(Settings.class);
     private final ArrayList<Account> botAccountList;
-    private final Account masterAccount;
+    private Account masterAccount;
 
     public Settings(@NotNull String settingsFilePath) {
         botAccountList = new ArrayList<>();
         masterAccount = new Account();
         ParseSettingsFile(settingsFilePath);
+    }
+
+    public void ClearAll() {
+        if (botAccountList != null) {
+            botAccountList.clear();
+        }
+        masterAccount = null;
     }
 
     public ArrayList<Account> botAccountList() {
@@ -28,6 +35,46 @@ public class Settings {
 
     public Account masterAccount() {
         return masterAccount;
+    }
+
+    //返回是否成功解析
+    public boolean ParseBotSettings(@NotNull Element rootElement) {
+        var botSettingsElement = rootElement.getChild("botSettings");
+        if (botSettingsElement == null) {
+            logger.error("botSettings标签不存在，无法继续解析");
+            return false;
+        }
+        List<Element> botAccountElements = botSettingsElement.getChildren("account");
+        if (botAccountElements.isEmpty()) {
+            logger.error("botSettings下不存在account标签，无法继续解析");
+            return false;
+        }
+        botAccountElements.forEach(element -> {
+            Element botQQIDElement = element.getChild("botQQID");
+            Element botQQPasswordElement = element.getChild("botQQPassword");
+            if (botQQPasswordElement == null ||
+                    botQQPasswordElement.getText().equals("") ||
+                    botQQIDElement == null ||
+                    botQQIDElement.getText().equals("")
+            ) {
+                logger.warn("Bot account 配置存在一个账号配置QQID或者Password项不存在或未填写");
+                return;
+            }
+            long id = Long.parseLong(botQQIDElement.getText());
+            String password = botQQPasswordElement.getText();
+            botAccountList.add(new Account(id, password));
+        });
+        return true;
+    }
+
+    public void ParseMasterSettings(@NotNull Element rootElement) {
+        Element masterSettingsElement = rootElement.getChild("masterSettings");
+        Element masterQQIDElement = masterSettingsElement.getChild("masterQQID");
+        if (masterQQIDElement == null || masterQQIDElement.getText().equals("")) {
+            logger.warn("Master QQID 未设置（配置不存在或者为空）");
+        } else {
+            masterAccount.ID = Long.parseLong(masterQQIDElement.getText());
+        }
     }
 
     public void ParseSettingsFile(@NotNull String settingsFilePath) {
@@ -45,32 +92,12 @@ public class Settings {
             var document = builder.build(settingsURL);
             var rootElement = document.getRootElement();
 
-            //parse bot settings
-            var botSettingsElement = rootElement.getChild("botSettings");
-            List<Element> botAccountElements = botSettingsElement.getChildren("account");
-            botAccountElements.forEach(element -> {
-                Element botQQIDElement = element.getChild("botQQID");
-                Element botQQPasswordElement = element.getChild("botQQPassword");
-                if (botQQPasswordElement == null ||
-                        botQQPasswordElement.getText().equals("") ||
-                        botQQIDElement == null ||
-                        botQQIDElement.getText().equals("")
-                ) {
-                    logger.warn("Bot account 配置存在一个账号配置QQID或者Password项不存在或未填写");
-                    return;
-                }
-                long id = Long.parseLong(botQQIDElement.getText());
-                String password = botQQPasswordElement.getText();
-                botAccountList.add(new Account(id, password));
-            });
-            //parse master settings
-            Element masterSettingsElement = rootElement.getChild("masterSettings");
-            Element masterQQIDElement = masterSettingsElement.getChild("masterQQID");
-            if (masterQQIDElement == null || masterQQIDElement.getText().equals("")) {
-                logger.warn("Master QQID 未设置（配置不存在或者为空）");
-            } else {
-                masterAccount.ID = Long.parseLong(masterQQIDElement.getText());
+            if (!ParseBotSettings(rootElement)) {
+                logger.error("解析botSettings标签失败，该xml非法，停止继续解析");
+                ClearAll();
             }
+
+            ParseMasterSettings(rootElement);
 
         } catch (JDOMException | IOException e) {
             logger.error(e.getMessage());

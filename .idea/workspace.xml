@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="backup">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Keywords/KeywordsLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/keywords.xml" afterDir="false" />
+    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="keyword解析备份">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/BotGroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/BotGroupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Keywords/Keyword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Keywords/Keyword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Keywords/KeywordsLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Keywords/KeywordsLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Settings.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -133,7 +132,7 @@
       <workItem from="1674131264599" duration="45936000" />
       <workItem from="1674275997582" duration="643000" />
       <workItem from="1674294343737" duration="6234000" />
-      <workItem from="1674462377922" duration="7664000" />
+      <workItem from="1674462377922" duration="9535000" />
     </task>
     <task id="LOCAL-00001" summary="Init and backup">
       <created>1674134140854</created>
@@ -296,7 +295,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674467087737</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="keyword解析备份">
+      <created>1674471352624</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1674471352624</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,7 +340,8 @@
     <MESSAGE value="弱智机器人问题回答命令完成" />
     <MESSAGE value="Keyword.java" />
     <MESSAGE value="backup" />
-    <option name="LAST_COMMIT_MESSAGE" value="backup" />
+    <MESSAGE value="keyword解析备份" />
+    <option name="LAST_COMMIT_MESSAGE" value="keyword解析备份" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
