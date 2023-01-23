@@ -29,7 +29,8 @@ public final class CommandGroupPlainTextHandler extends AbstractGroupPlainTextHa
         for (var matcher : matchers) {
             if (matcher.MatchFunction()) break;
         }
-        return false;
+        //中断判断
+        return true;
     }
 
     //返回是否成功匹配
