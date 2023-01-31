@@ -3,7 +3,8 @@ package org.qingzhixing.MessageContentHandlers;
 import net.mamoe.mirai.contact.Friend;
 import net.mamoe.mirai.contact.Group;
 import net.mamoe.mirai.contact.Member;
-import net.mamoe.mirai.message.data.PlainText;
+import net.mamoe.mirai.message.data.MessageChain;
+import net.mamoe.mirai.message.data.MessageContent;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class AbstractGroupMessageContentHandler extends AbstractMessageContentHandler {
@@ -17,8 +18,8 @@ public abstract class AbstractGroupMessageContentHandler extends AbstractMessage
         return group;
     }
 
-    protected void BindContext(@NotNull Member sender, @NotNull PlainText plainText, @NotNull Group group) {
-        super.BindContext(sender, plainText);
+    protected void BindContext(@NotNull Member sender, @NotNull MessageContent content, @NotNull MessageChain originalMessageChain, @NotNull Group group) {
+        super.BindContext(sender, content, originalMessageChain);
         this.group = group;
     }
 }

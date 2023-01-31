@@ -8,6 +8,7 @@ import net.mamoe.mirai.event.EventHandler;
 import net.mamoe.mirai.event.SimpleListenerHost;
 import net.mamoe.mirai.event.events.GroupMessageEvent;
 import net.mamoe.mirai.message.data.FlashImage;
+import net.mamoe.mirai.message.data.MessageChain;
 import net.mamoe.mirai.message.data.MessageContent;
 import net.mamoe.mirai.message.data.PlainText;
 import org.apache.log4j.Logger;
@@ -51,9 +52,10 @@ public class SimpleEventListener extends SimpleListenerHost {
         masterFriend.sendMessage("发送者 昵称:\"" + sender.getNick() + "\" QQID:" + sender.getId());
     }
 
-    private void HandleGroupPlainText(@NotNull Member sender, @NotNull PlainText plainText, @NotNull Group group, boolean atBot, boolean isOnlyAtBot) {
+    private void HandleGroupPlainText(@NotNull Member sender, @NotNull PlainText plainText, @NotNull MessageChain originalMessageChain, @NotNull Group group, boolean atBot, boolean isOnlyAtBot) {
         for (var handler : groupPlainTextHandlers) {
-            if (handler.BindContextAndHandle(sender, plainText, group, atBot, isOnlyAtBot)) return;
+            if (handler.BindContextAndHandle(sender, plainText, originalMessageChain, group, atBot, isOnlyAtBot))
+                return;
         }
     }
 
@@ -75,7 +77,7 @@ public class SimpleEventListener extends SimpleListenerHost {
             if (messageContent instanceof FlashImage) {
                 HandleFlashImageMessage((FlashImage) messageContent, sender);
             } else if (messageContent instanceof PlainText) {
-                HandleGroupPlainText(sender, (PlainText) message, group, isAtBot, isOnlyAtBot);
+                HandleGroupPlainText(sender, (PlainText) message, messageChain, group, isAtBot, isOnlyAtBot);
             }
         });
     }
