@@ -20,7 +20,7 @@ public class SimpleBotController extends AbstractBotController {
     }
 
     @Override
-    public void Start() {
+    public void run() {
         logger.info("bot QQID: " + bot.getId());
         logger.info("master QQID: " + masterAccount.ID);
         bot.login();

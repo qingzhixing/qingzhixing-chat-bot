@@ -18,6 +18,7 @@ public class BotGroupController {
     }
 
     public void StartControllers() {
-        botControllers.forEach(AbstractBotController::Start);
+        //多线程方式Start
+        botControllers.forEach(botController -> new Thread(botController).start());
     }
 }
