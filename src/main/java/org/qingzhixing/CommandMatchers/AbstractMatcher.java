@@ -119,8 +119,7 @@ public abstract class AbstractMatcher {
     }
 
     public String GetCommandString() {
-        //带arg的需要多匹配一个空格
-        return ((mode == MatchMode.START) ? "/" : "") + commandName + ((mode == MatchMode.START_WITH_ARGS) ? ' ' : "");
+        return ((mode == MatchMode.START) ? "/" : "") + commandName;
     }
 
     public final String GetUsage() {
@@ -128,10 +127,7 @@ public abstract class AbstractMatcher {
         if (needAtBot) atState = "[@bot]";
         if (needOnlyAtBot) atState = "[only@bot]";
 
-        if (mode != MatchMode.CUSTOM) {
-            return atState + ' ' + GetCommandString() + " : " + description + "\n     匹配模式:" + mode;
-        }
-        return atState + ' ' + description + "\n     匹配模式:" + mode;
+        return atState + ' ' + GetCommandString() + " : " + description + "\n     匹配模式:" + mode.description;
     }
 
     protected abstract void Handle();
@@ -187,21 +183,27 @@ public abstract class AbstractMatcher {
 
 
     public enum MatchMode {
-        START("START"),                     // 按 /指令名 的方式在文本最开始匹配
-        START_WITH_ARGS("START_WITH_ARGS"), // 带参数匹配
-        CONTAINS("CONTAINS"),               // 只要包含指令名都算匹配成功
-        CUSTOM("CUSTOM"),                   // 供子类自定义Match方式
+        START("按 /指令名 的方式在文本最开始匹配"),
+        START_WITH_ARGS("按 /指令名 的方式在文本最开始匹配,并且处理参数"),
+        CONTAINS("只要包含指令名都算匹配成功"),
+        CUSTOM("自定义匹配方式"),
         ;
 
-        private final String stringName;
+        private final String description;
 
-        MatchMode(@NotNull String stringName) {
-            this.stringName = stringName;
+        MatchMode(@NotNull String description) {
+            this.description = description;
+        }
+
+        public String description() {
+            return description;
         }
 
         @Override
         public String toString() {
-            return stringName;
+            return "MatchMode{" +
+                    "description='" + description + '\'' +
+                    '}';
         }
     }
 }

@@ -42,9 +42,12 @@ public final class CommandGroupPlainTextHandler extends AbstractGroupPlainTextHa
     public boolean Handle() {
         for (var matcher : matchers) {
             logger.debug(matcher);
+            matcher.BindContext(getPlainTextContent(), sender(), group(), isAtBot(), isOnlyAtBot());
             if (matcher.MatchAndHandle()) {
+                logger.debug("匹配成功:" + matcher.GetCommandString());
                 return true;
             }
+            logger.debug("匹配失败:" + matcher.GetCommandString());
         }
         return false;
     }

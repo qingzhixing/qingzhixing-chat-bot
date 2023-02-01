@@ -12,7 +12,7 @@ public class Matcher_Help extends AbstractMatcher {
     public Matcher_Help(@NotNull List<AbstractMatcher> matchers) {
         super();
         this.setCommandName("help")
-                .setDescription("帮助。后面加指令名称如 'my-info' 会显示该指令的描述，否则返回所有指令的描述")
+                .setDescription("帮助。后面加指令名称如 '/help my-info' 会显示该指令的描述，否则返回所有指令的描述")
                 .setNeedOnlyAtBot(true);
         this.matchers = matchers;
     }
@@ -25,7 +25,7 @@ public class Matcher_Help extends AbstractMatcher {
             matchers.forEach(matcher -> {
                 replyStringAtom.set(replyStringAtom.get() + matcher.GetUsage() + '\n');
             });
-            AtThenReply(new PlainText(replyStringAtom.get()));
+            AtThenReply(new PlainText('\n' + replyStringAtom.get()));
             return;
         }
         var replyString = "";
@@ -35,7 +35,7 @@ public class Matcher_Help extends AbstractMatcher {
                 break;
             }
         }
-
-        AtThenReply(new PlainText(replyString));
+        if (replyString.equals("")) replyString = "没有找到指令: '" + replyString + "'";
+        AtThenReply(new PlainText('\n' + replyString));
     }
 }
