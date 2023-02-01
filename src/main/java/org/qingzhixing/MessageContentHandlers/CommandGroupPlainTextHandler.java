@@ -4,14 +4,15 @@ import net.mamoe.mirai.message.data.Image;
 import net.mamoe.mirai.message.data.MessageChain;
 import net.mamoe.mirai.message.data.MessageUtils;
 import net.mamoe.mirai.message.data.PlainText;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.qingzhixing.Global;
 import org.qingzhixing.Utilities;
 
 import java.util.ArrayList;
 
 public final class CommandGroupPlainTextHandler extends AbstractGroupPlainTextHandler {
-    private static final Logger logger = Logger.getLogger(CommandGroupPlainTextHandler.class);
+    private static final Logger logger = LogManager.getLogger(CommandGroupPlainTextHandler.class);
     private final ArrayList<CommandMatcher> matchers;
 
     public CommandGroupPlainTextHandler() {

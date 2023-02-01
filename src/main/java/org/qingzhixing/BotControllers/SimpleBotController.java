@@ -3,14 +3,15 @@ package org.qingzhixing.BotControllers;
 
 import net.mamoe.mirai.Bot;
 import net.mamoe.mirai.message.data.PokeMessage;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.qingzhixing.Account;
 import org.qingzhixing.EventListeners.SimpleEventListener;
 import org.qingzhixing.Global;
 
 public class SimpleBotController extends AbstractBotController {
-    private static final Logger logger = Logger.getLogger(SimpleBotController.class);
+    private static final Logger logger = LogManager.getLogger(SimpleBotController.class);
 
     private final Account masterAccount;
 

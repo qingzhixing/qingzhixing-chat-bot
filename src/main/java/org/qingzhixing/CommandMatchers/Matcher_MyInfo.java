@@ -6,13 +6,14 @@ import net.mamoe.mirai.message.data.Image;
 import net.mamoe.mirai.message.data.MessageChain;
 import net.mamoe.mirai.message.data.MessageUtils;
 import net.mamoe.mirai.message.data.PlainText;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.qingzhixing.Global;
 import org.qingzhixing.Utilities;
 
 public class Matcher_MyInfo extends AbstractMatcher {
-    private static final Logger logger = Logger.getLogger(Matcher_MyInfo.class);
+    private static final Logger logger = LogManager.getLogger(Matcher_MyInfo.class);
 
 
     public Matcher_MyInfo(@NotNull String originalText, @NotNull Member sender, @NotNull Contact contact, boolean isAtBot, boolean isOnlyAtBot) {

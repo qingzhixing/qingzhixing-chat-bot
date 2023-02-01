@@ -1,6 +1,7 @@
 package org.qingzhixing;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jdom.input.SAXBuilder;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Settings {
-    private static final Logger logger = Logger.getLogger(Settings.class);
+    private static final Logger logger = LogManager.getLogger(Settings.class);
     private final ArrayList<Account> botAccountList;
     private Account masterAccount;
 

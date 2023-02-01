@@ -10,7 +10,8 @@ import net.mamoe.mirai.message.data.FlashImage;
 import net.mamoe.mirai.message.data.MessageChain;
 import net.mamoe.mirai.message.data.MessageContent;
 import net.mamoe.mirai.message.data.PlainText;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.qingzhixing.Global;
 import org.qingzhixing.MessageContentHandlers.AbstractGroupPlainTextHandler;
@@ -21,7 +22,7 @@ import org.qingzhixing.Utilities;
 import java.util.ArrayList;
 
 public class SimpleEventListener extends SimpleListenerHost {
-    private static final Logger logger = Logger.getLogger(SimpleEventListener.class);
+    private static final Logger logger = LogManager.getLogger(SimpleEventListener.class);
     private final ArrayList<AbstractGroupPlainTextHandler> groupPlainTextHandlers;
 
     public SimpleEventListener() {

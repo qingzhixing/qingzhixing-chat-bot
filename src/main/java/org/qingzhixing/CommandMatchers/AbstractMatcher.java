@@ -5,22 +5,23 @@ import net.mamoe.mirai.contact.Contact;
 import net.mamoe.mirai.contact.Group;
 import net.mamoe.mirai.contact.Member;
 import net.mamoe.mirai.message.data.Message;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.qingzhixing.Utilities;
 
 public abstract class AbstractMatcher {
-    private static final Logger logger = Logger.getLogger(AbstractMatcher.class);
+    private static final Logger logger = LogManager.getLogger(AbstractMatcher.class);
     private final boolean isAtBot;
     private final boolean isOnlyAtBot;
     private final Member sender;
     private final Contact contact;
+    private final String originalText;
     private boolean needOnlyAtBot;
     private boolean needAtBot;
     private String description;
     private String commandName;
     private MatchMode mode;
-    private final String originalText;
 
     public AbstractMatcher(@NotNull String originalText, @NotNull Member sender, @NotNull Contact contact, boolean isAtBot, boolean isOnlyAtBot) {
         description = "";
@@ -118,8 +119,12 @@ public abstract class AbstractMatcher {
             case CONTAINS: {
                 return originalText.contains(commandName);
             }
+            case CUSTOM: {
+                logger.warn("使用了自定义的匹配模式，但是并未重写 Match() 方法");
+                return false;
+            }
             default: {
-                logger.error("存在一个非法mode,进入了switch default中");
+                logger.warn("存在一个非法匹配模式");
                 return false;
             }
         }
@@ -150,7 +155,8 @@ public abstract class AbstractMatcher {
 
     public enum MatchMode {
         START_WITH("START_WITH"),       // 按 /指令名 的方式在文本最开始匹配
-        CONTAINS("CONTAINS")          // 只要包含指令名都算匹配成功
+        CONTAINS("CONTAINS"),           // 只要包含指令名都算匹配成功
+        CUSTOM("CUSTOM"),               // 供子类自定义Match方式
         ;
 
         private final String stringName;

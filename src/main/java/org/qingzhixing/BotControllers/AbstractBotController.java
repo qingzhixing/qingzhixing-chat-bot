@@ -2,12 +2,13 @@ package org.qingzhixing.BotControllers;
 
 import net.mamoe.mirai.Bot;
 import net.mamoe.mirai.event.SimpleListenerHost;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 
 public abstract class AbstractBotController implements Runnable {
-    private static final Logger logger = Logger.getLogger(AbstractBotController.class);
+    private static final Logger logger = LogManager.getLogger(AbstractBotController.class);
     protected Bot bot;
 
     AbstractBotController(@NotNull Bot bot) {

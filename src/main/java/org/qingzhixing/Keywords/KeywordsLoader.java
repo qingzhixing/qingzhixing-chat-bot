@@ -2,7 +2,8 @@ package org.qingzhixing.Keywords;
 
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jdom.input.SAXBuilder;
@@ -17,7 +18,7 @@ import java.util.List;
 import java.util.PriorityQueue;
 
 public class KeywordsLoader {
-    private static final Logger logger = Logger.getLogger(KeywordsLoader.class);
+    private static final Logger logger = LogManager.getLogger(KeywordsLoader.class);
     private final PriorityQueue<Keyword> keywords;
 
     public KeywordsLoader(@NotNull String keywordsFilePath) {

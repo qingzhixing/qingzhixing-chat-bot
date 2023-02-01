@@ -6,7 +6,8 @@ import net.mamoe.mirai.contact.Group;
 import net.mamoe.mirai.contact.Member;
 import net.mamoe.mirai.contact.User;
 import net.mamoe.mirai.message.data.*;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
@@ -16,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class Utilities {
-    private static final Logger logger = Logger.getLogger(Utilities.class);
+    private static final Logger logger = LogManager.getLogger(Utilities.class);
 
     @NotNull
     public static URL GetCurrentJarResourceURL(@NotNull String path) throws RuntimeException {
