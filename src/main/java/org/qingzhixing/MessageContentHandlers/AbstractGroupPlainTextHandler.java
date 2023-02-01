@@ -14,12 +14,12 @@ public abstract class AbstractGroupPlainTextHandler extends AbstractGroupMessage
         super();
     }
 
-    public boolean isNotAtBot() {
-        return !isAtBot;
+    public boolean isAtBot() {
+        return isAtBot;
     }
 
-    public boolean isNotOnlyAtBot() {
-        return !isOnlyAtBot;
+    public boolean isOnlyAtBot() {
+        return isOnlyAtBot;
     }
 
     public void BindContext(@NotNull Member sender, @NotNull PlainText plainText, @NotNull MessageChain originalMessageChain, @NotNull Group group, boolean atBot, boolean isOnlyAtBot) {

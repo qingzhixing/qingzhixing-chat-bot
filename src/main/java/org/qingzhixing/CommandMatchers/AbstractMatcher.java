@@ -12,23 +12,31 @@ import org.qingzhixing.Utilities;
 
 public abstract class AbstractMatcher {
     private static final Logger logger = LogManager.getLogger(AbstractMatcher.class);
-    private final boolean isAtBot;
-    private final boolean isOnlyAtBot;
-    private final Member sender;
-    private final Contact contact;
-    private final String originalText;
+    private boolean isAtBot;
+    private boolean isOnlyAtBot;
+    private Member sender;
+    private Contact contact;
+    private String originalText;
     private boolean needOnlyAtBot;
     private boolean needAtBot;
     private String description;
     private String commandName;
     private MatchMode mode;
 
-    public AbstractMatcher(@NotNull String originalText, @NotNull Member sender, @NotNull Contact contact, boolean isAtBot, boolean isOnlyAtBot) {
+    public AbstractMatcher() {
         description = "";
         commandName = "";
         mode = MatchMode.START_WITH;
         needOnlyAtBot = false;
         needAtBot = false;
+        originalText = "";
+        isAtBot = false;
+        isOnlyAtBot = false;
+        sender = null;
+        contact = null;
+    }
+
+    public final void BindContext(@NotNull String originalText, @NotNull Member sender, @NotNull Contact contact, boolean isAtBot, boolean isOnlyAtBot) {
         this.originalText = originalText;
         this.isAtBot = isAtBot;
         this.isOnlyAtBot = isOnlyAtBot;
@@ -70,12 +78,12 @@ public abstract class AbstractMatcher {
         return this;
     }
 
-    protected boolean isNotAtBot() {
-        return !isAtBot;
+    protected boolean isAtBot() {
+        return isAtBot;
     }
 
-    protected boolean isNotOnlyAtBot() {
-        return !isOnlyAtBot;
+    protected boolean isOnlyAtBot() {
+        return isOnlyAtBot;
     }
 
     protected String commandName() {
@@ -99,24 +107,33 @@ public abstract class AbstractMatcher {
     }
 
     public final String GetUsage() {
-        var commandString = GetCommandString();
-        return commandString + " - " + description + "\n     匹配模式:" + mode;
+        var atState = "";
+        if (needAtBot) atState = "[@bot]";
+        if (needOnlyAtBot) atState = "[only@bot]";
+
+        if (mode != MatchMode.CUSTOM) {
+            var commandString = GetCommandString();
+            return atState + ' ' + commandString + " - " + description + "\n     匹配模式:" + mode;
+        }
+        return atState + ' ' + description + "\n     匹配模式:" + mode;
     }
 
     protected abstract void Handle();
 
     //返回是否成功匹配
-    public final boolean Match() {
-        if (needAtBot && isNotAtBot()) return false;
-        if (needOnlyAtBot && isNotOnlyAtBot()) return false;
-        //空指令则不匹配
-        if (commandName.equals("")) return false;
+    protected boolean Match() {
+        if (needAtBot && !isAtBot()) return false;
+        if (needOnlyAtBot && !isOnlyAtBot()) return false;
         switch (mode) {
             case START_WITH: {
+                //空指令则不匹配
+                if (commandName.equals("")) return false;
                 var subString = '/' + commandName;
                 return originalText.startsWith(subString);
             }
             case CONTAINS: {
+                //空指令则不匹配
+                if (commandName.equals("")) return false;
                 return originalText.contains(commandName);
             }
             case CUSTOM: {

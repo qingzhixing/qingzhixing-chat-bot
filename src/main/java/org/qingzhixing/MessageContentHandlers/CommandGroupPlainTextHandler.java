@@ -6,6 +6,9 @@ import net.mamoe.mirai.message.data.MessageUtils;
 import net.mamoe.mirai.message.data.PlainText;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.qingzhixing.CommandMatchers.AbstractMatcher;
+import org.qingzhixing.CommandMatchers.Matcher_MyInfo;
+import org.qingzhixing.CommandMatchers.Matcher_QuestionAnswer;
 import org.qingzhixing.Global;
 import org.qingzhixing.Utilities;
 
@@ -13,24 +16,31 @@ import java.util.ArrayList;
 
 public final class CommandGroupPlainTextHandler extends AbstractGroupPlainTextHandler {
     private static final Logger logger = LogManager.getLogger(CommandGroupPlainTextHandler.class);
-    private final ArrayList<CommandMatcher> matchers;
+    private final ArrayList<CommandMatcher> matchers_banned;
+
+    private final ArrayList<AbstractMatcher> matchers;
 
     public CommandGroupPlainTextHandler() {
         super();
         matchers = new ArrayList<>();
+        matchers.add(new Matcher_MyInfo());
+        matchers.add(new Matcher_QuestionAnswer());
+
+        matchers_banned = new ArrayList<>();
         //顺序代表优先级
-        matchers.add(this::CommandHandler_Help);
-        matchers.add(this::CommandHandler_MyInfo);
-        matchers.add(this::CommandHandler_QuestionAnswer);
-        matchers.add(this::CommandHandler_AtBot);
-        matchers.add(this::CommandHandler_Test);
+        matchers_banned.add(this::CommandHandler_Help);
+        matchers_banned.add(this::CommandHandler_MyInfo);
+        matchers_banned.add(this::CommandHandler_QuestionAnswer);
+        matchers_banned.add(this::CommandHandler_AtBot);
+        matchers_banned.add(this::CommandHandler_Test);
     }
 
 
     @Override
     public boolean Handle() {
         for (var matcher : matchers) {
-            if (matcher.MatchFunction()) {
+            matcher.BindContext(getPlainTextContent(), sender(), group(), isAtBot(), isOnlyAtBot());
+            if (matcher.MatchAndHandle()) {
                 return true;
             }
         }
@@ -41,7 +51,7 @@ public final class CommandGroupPlainTextHandler extends AbstractGroupPlainTextHa
     private boolean CommandHandler_MyInfo() {
         var text = getPlainTextContent();
 
-        if (isNotOnlyAtBot() || !text.contains("/my-info")) return false;
+        if (!isOnlyAtBot() || !text.contains("/my-info")) return false;
         Image avatar;
         try {
             avatar = Utilities.URLToImage(sender().getAvatarUrl(), sender().getBot());
@@ -75,7 +85,7 @@ public final class CommandGroupPlainTextHandler extends AbstractGroupPlainTextHa
 
     private boolean CommandHandler_Help() {
         var text = getPlainTextContent();
-        if (isNotOnlyAtBot() || !text.contains("/help")) return false;
+        if (!isOnlyAtBot() || !text.contains("/help")) return false;
         var replyText = new PlainText(
                 "\n目前可以使用的指令:\n" +
                         "[only@bot] /my-info - 返回头像、昵称与 QQ ID\n" +
@@ -91,7 +101,7 @@ public final class CommandGroupPlainTextHandler extends AbstractGroupPlainTextHa
 
     private boolean CommandHandler_QuestionAnswer() {
         //没有AtBot则90%概率不回答
-        if (isNotAtBot() && Math.random() < 0.9) {
+        if (!isAtBot() && Math.random() < 0.9) {
             return false;
         }
         //否则50几率回答
@@ -116,9 +126,9 @@ public final class CommandGroupPlainTextHandler extends AbstractGroupPlainTextHa
     }
 
     private boolean CommandHandler_AtBot() {
-        if (isNotAtBot()) return false;
+        if (!isAtBot()) return false;
         //不止艾特bot则50%几率回复
-        if (isNotOnlyAtBot()) {
+        if (!isOnlyAtBot()) {
             if (Math.random() < 0.5) {
                 Utilities.AtThenReply(new PlainText("  艾特我干嘛呀！！！！"), sender(), group());
                 return true;
@@ -135,7 +145,7 @@ public final class CommandGroupPlainTextHandler extends AbstractGroupPlainTextHa
 
     private boolean CommandHandler_Test() {
         var text = getPlainTextContent();
-        if (isNotOnlyAtBot() || !text.contains("/test")) return false;
+        if (!isOnlyAtBot() || !text.contains("/test")) return false;
         Utilities.QuoteThenReply(new PlainText("引用回复测试"), originalMessageChain(), group());
         return true;
     }
