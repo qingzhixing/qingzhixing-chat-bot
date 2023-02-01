@@ -20,7 +20,7 @@ public abstract class AbstractMatcher {
     private String description;
     private String commandName;
     private MatchMode mode;
-    private String originalText;
+    private final String originalText;
 
     public AbstractMatcher(@NotNull String originalText, @NotNull Member sender, @NotNull Contact contact, boolean isAtBot, boolean isOnlyAtBot) {
         description = "";
@@ -65,6 +65,7 @@ public abstract class AbstractMatcher {
 
     protected AbstractMatcher setNeedOnlyAtBot(boolean needOnlyAtBot) {
         this.needOnlyAtBot = needOnlyAtBot;
+        if (needOnlyAtBot) setNeedAtBot(true);
         return this;
     }
 
@@ -143,11 +144,6 @@ public abstract class AbstractMatcher {
 
     public AbstractMatcher setMode(@NotNull MatchMode mode) {
         this.mode = mode;
-        return this;
-    }
-
-    public AbstractMatcher setOriginalText(@NotNull String originalText) {
-        this.originalText = originalText.trim();
         return this;
     }
 

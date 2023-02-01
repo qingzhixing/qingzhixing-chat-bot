@@ -17,8 +17,10 @@ public class Matcher_MyInfo extends AbstractMatcher {
 
     public Matcher_MyInfo(@NotNull String originalText, @NotNull Member sender, @NotNull Contact contact, boolean isAtBot, boolean isOnlyAtBot) {
         super(originalText, sender, contact, isAtBot, isOnlyAtBot);
-        this.setCommandName("my-info");
-        this.setDescription("返回头像、昵称与 QQ ID");
+        this.setCommandName("my-info")
+                .setDescription("返回头像、昵称与 QQ ID")
+                .setMode(MatchMode.START_WITH)
+                .setNeedOnlyAtBot(true);
     }
 
     @Override

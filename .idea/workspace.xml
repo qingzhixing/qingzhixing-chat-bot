@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="移动masterFriend到Global">
+    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="多线程运行bot">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/BotControllers/AbstractBotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/BotControllers/AbstractBotController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/BotControllers/SimpleBotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/BotControllers/SimpleBotController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/BotGroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/BotGroupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/CommandMatchers/AbstractMatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/CommandMatchers/AbstractMatcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/CommandMatchers/Matcher_MyInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/CommandMatchers/Matcher_MyInfo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +136,7 @@
       <workItem from="1674294343737" duration="6234000" />
       <workItem from="1674462377922" duration="18627000" />
       <workItem from="1674625800017" duration="599000" />
-      <workItem from="1675198155945" duration="10371000" />
+      <workItem from="1675198155945" duration="10624000" />
     </task>
     <task id="LOCAL-00001" summary="Init and backup">
       <created>1674134140854</created>
@@ -426,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675263849743</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="多线程运行bot">
+      <created>1675264167381</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1675264167381</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,7 +450,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="包更改" />
     <MESSAGE value="单独At检测，/help指令实现" />
     <MESSAGE value="Edit Readme.md" />
     <MESSAGE value="test" />
@@ -469,7 +474,8 @@
     <MESSAGE value="AbstractMatcher.java" />
     <MESSAGE value="移动成员" />
     <MESSAGE value="移动masterFriend到Global" />
-    <option name="LAST_COMMIT_MESSAGE" value="移动masterFriend到Global" />
+    <MESSAGE value="多线程运行bot" />
+    <option name="LAST_COMMIT_MESSAGE" value="多线程运行bot" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
