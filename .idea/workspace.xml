@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="测试重构的代码ing">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/CommandMatchers/Matcher_QuestionAnswer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/CommandMatchers/AbstractMatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/CommandMatchers/AbstractMatcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/CommandMatchers/Matcher_MyInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/CommandMatchers/Matcher_MyInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/MessageContentHandlers/AbstractGroupPlainTextHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/MessageContentHandlers/AbstractGroupPlainTextHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/MessageContentHandlers/CommandGroupPlainTextHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/MessageContentHandlers/CommandGroupPlainTextHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -139,7 +136,7 @@
       <workItem from="1674294343737" duration="6234000" />
       <workItem from="1674462377922" duration="18627000" />
       <workItem from="1674625800017" duration="599000" />
-      <workItem from="1675198155945" duration="15573000" />
+      <workItem from="1675198155945" duration="15975000" />
     </task>
     <task id="LOCAL-00001" summary="Init and backup">
       <created>1674134140854</created>
@@ -449,7 +446,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675281264254</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="测试重构的代码ing">
+      <created>1675284282169</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1675284282169</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

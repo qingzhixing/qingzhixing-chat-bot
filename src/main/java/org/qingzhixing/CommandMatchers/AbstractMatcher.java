@@ -37,7 +37,7 @@ public abstract class AbstractMatcher {
     }
 
     public final void BindContext(@NotNull String originalText, @NotNull Member sender, @NotNull Contact contact, boolean isAtBot, boolean isOnlyAtBot) {
-        this.originalText = originalText;
+        this.originalText = originalText.trim();
         this.isAtBot = isAtBot;
         this.isOnlyAtBot = isOnlyAtBot;
         this.sender = sender;
@@ -88,6 +88,22 @@ public abstract class AbstractMatcher {
 
     protected String commandName() {
         return commandName;
+    }
+
+    @Override
+    public String toString() {
+        return "AbstractMatcher{" +
+                "isAtBot=" + isAtBot +
+                ", isOnlyAtBot=" + isOnlyAtBot +
+                ", sender=" + sender +
+                ", contact=" + contact +
+                ", originalText='" + originalText + '\'' +
+                ", needOnlyAtBot=" + needOnlyAtBot +
+                ", needAtBot=" + needAtBot +
+                ", description='" + description + '\'' +
+                ", commandName='" + commandName + '\'' +
+                ", mode=" + mode +
+                '}';
     }
 
     protected MatchMode mode() {
