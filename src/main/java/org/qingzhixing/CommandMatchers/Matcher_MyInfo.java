@@ -17,7 +17,7 @@ public class Matcher_MyInfo extends AbstractMatcher {
         super();
         this.setCommandName("my-info")
                 .setDescription("返回头像、昵称与 QQ ID")
-                .setMode(MatchMode.START_WITH)
+                .setMode(MatchMode.START)
                 .setNeedOnlyAtBot(true);
     }
 

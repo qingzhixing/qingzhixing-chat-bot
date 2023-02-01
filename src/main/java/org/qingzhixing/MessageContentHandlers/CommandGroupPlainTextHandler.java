@@ -7,6 +7,7 @@ import net.mamoe.mirai.message.data.PlainText;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.qingzhixing.CommandMatchers.AbstractMatcher;
+import org.qingzhixing.CommandMatchers.Matcher_Help;
 import org.qingzhixing.CommandMatchers.Matcher_MyInfo;
 import org.qingzhixing.CommandMatchers.Matcher_QuestionAnswer;
 import org.qingzhixing.Global;
@@ -25,6 +26,7 @@ public final class CommandGroupPlainTextHandler extends AbstractGroupPlainTextHa
         matchers = new ArrayList<>();
         matchers.add(new Matcher_MyInfo());
         matchers.add(new Matcher_QuestionAnswer());
+        matchers.add(new Matcher_Help(matchers));
 
         matchers_banned = new ArrayList<>();
         //顺序代表优先级
