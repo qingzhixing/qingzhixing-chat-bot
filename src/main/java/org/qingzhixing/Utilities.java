@@ -3,11 +3,9 @@ package org.qingzhixing;
 import net.mamoe.mirai.Bot;
 import net.mamoe.mirai.contact.Contact;
 import net.mamoe.mirai.contact.Group;
+import net.mamoe.mirai.contact.Member;
 import net.mamoe.mirai.contact.User;
-import net.mamoe.mirai.message.data.At;
-import net.mamoe.mirai.message.data.AtAll;
-import net.mamoe.mirai.message.data.MessageChain;
-import net.mamoe.mirai.message.data.MessageContent;
+import net.mamoe.mirai.message.data.*;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
@@ -92,6 +90,22 @@ public final class Utilities {
             image = Contact.uploadImage(bot.getAsFriend(), imageInputStream);
         }
         return image;
+    }
+
+    public static void AtThenReply(@NotNull Message originalMessage, @NotNull Member atTarget, @NotNull Contact sendTarget) {
+        var newChain = MessageUtils.newChain(
+                new At(atTarget.getId()),
+                originalMessage
+        );
+        sendTarget.sendMessage(newChain);
+    }
+
+    public static void QuoteThenReply(@NotNull Message originalMessage, @NotNull MessageChain originalMessageChain, @NotNull Contact sendTarget) {
+        var newChain = MessageUtils.newChain(
+                new QuoteReply(originalMessageChain),
+                originalMessage
+        );
+        sendTarget.sendMessage(newChain);
     }
 
     /*

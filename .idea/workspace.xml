@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="重构指令处理预备中，备份">
+    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="AbstractMatcher.java">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/CommandMatchers/Matcher_MyInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/CommandMatchers/AbstractMatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/CommandMatchers/AbstractMatcher.java" afterDir="false" />
     </list>
@@ -132,7 +133,7 @@
       <workItem from="1674294343737" duration="6234000" />
       <workItem from="1674462377922" duration="18627000" />
       <workItem from="1674625800017" duration="599000" />
-      <workItem from="1675198155945" duration="5290000" />
+      <workItem from="1675198155945" duration="7290000" />
     </task>
     <task id="LOCAL-00001" summary="Init and backup">
       <created>1674134140854</created>
@@ -400,7 +401,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675202025877</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="AbstractMatcher.java">
+      <created>1675258997486</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1675258997486</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -418,7 +426,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="@Bot 我是谁?" />
     <MESSAGE value="迁移前备份" />
     <MESSAGE value="优化代码" />
     <MESSAGE value="包更改" />
@@ -443,7 +450,8 @@
     <MESSAGE value="atbot事件" />
     <MESSAGE value="引用回复完成" />
     <MESSAGE value="重构指令处理预备中，备份" />
-    <option name="LAST_COMMIT_MESSAGE" value="重构指令处理预备中，备份" />
+    <MESSAGE value="AbstractMatcher.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="AbstractMatcher.java" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

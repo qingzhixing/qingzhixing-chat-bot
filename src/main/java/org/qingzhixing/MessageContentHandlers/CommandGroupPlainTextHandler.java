@@ -47,7 +47,7 @@ public final class CommandGroupPlainTextHandler extends AbstractGroupPlainTextHa
         } catch (RuntimeException e) {
             var logErrorMessage = " 获取图片出错啦TT！";
             logger.error(logErrorMessage);
-            AtThenReply(new PlainText(logErrorMessage), sender(), group());
+            Utilities.AtThenReply(new PlainText(logErrorMessage), sender(), group());
             //通知master
             if (isMasterFriendExits()) {
                 masterFriend().sendMessage("" +
@@ -67,7 +67,7 @@ public final class CommandGroupPlainTextHandler extends AbstractGroupPlainTextHa
                 new PlainText("昵称: \"" + sender().getNick() + "\"\n"),
                 new PlainText("ID: " + sender().getId())
         );
-        AtThenReply(replyChain, sender(), group());
+        Utilities.AtThenReply(replyChain, sender(), group());
         return true;
 
     }
@@ -84,7 +84,7 @@ public final class CommandGroupPlainTextHandler extends AbstractGroupPlainTextHa
                         "[@bot] - 别艾特我啦！不止At bot有50%几率回复，否则为10%\n" +
                         "[only@bot] /test - 此功能仅用作开发者测试，会得到什么回答不确定哟~"
         );
-        AtThenReply(replyText, sender(), group());
+        Utilities.AtThenReply(replyText, sender(), group());
         return true;
     }
 
@@ -119,13 +119,13 @@ public final class CommandGroupPlainTextHandler extends AbstractGroupPlainTextHa
         //不止艾特bot则50%几率回复
         if (isNotOnlyAtBot()) {
             if (Math.random() < 0.5) {
-                AtThenReply(new PlainText("  艾特我干嘛呀！！！！"), sender(), group());
+                Utilities.AtThenReply(new PlainText("  艾特我干嘛呀！！！！"), sender(), group());
                 return true;
             }
         } else {
             //单独atBot有10%几率回复
             if (Math.random() < 0.1) {
-                AtThenReply(new PlainText("  你干嘛！不许艾特我啦！！🤯"), sender(), group());
+                Utilities.AtThenReply(new PlainText("  你干嘛！不许艾特我啦！！🤯"), sender(), group());
                 return true;
             }
         }
@@ -135,7 +135,7 @@ public final class CommandGroupPlainTextHandler extends AbstractGroupPlainTextHa
     private boolean CommandHandler_Test() {
         var text = getPlainTextContent();
         if (isNotOnlyAtBot() || !text.contains("/test")) return false;
-        QuoteThenReply(new PlainText("引用回复测试"), originalMessageChain(), group());
+        Utilities.QuoteThenReply(new PlainText("引用回复测试"), originalMessageChain(), group());
         return true;
     }
 

@@ -65,7 +65,6 @@ public class SimpleEventListener extends SimpleListenerHost {
         var group = event.getGroup();
         var messageChain = event.getMessage();
         var bot = event.getBot();
-
         //不处理自己的事件
         if (sender.getId() == bot.getId()) return;
 

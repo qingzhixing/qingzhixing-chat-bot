@@ -1,9 +1,10 @@
 package org.qingzhixing.MessageContentHandlers;
 
-import net.mamoe.mirai.contact.Contact;
 import net.mamoe.mirai.contact.Friend;
 import net.mamoe.mirai.contact.Member;
-import net.mamoe.mirai.message.data.*;
+import net.mamoe.mirai.message.data.Message;
+import net.mamoe.mirai.message.data.MessageChain;
+import net.mamoe.mirai.message.data.MessageContent;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class AbstractMessageContentHandler {
@@ -15,22 +16,6 @@ public abstract class AbstractMessageContentHandler {
 
     protected AbstractMessageContentHandler(Friend masterFriend) {
         this.masterFriend = masterFriend;
-    }
-
-    protected static void AtThenReply(@NotNull Message originalMessage, @NotNull Member atTarget, @NotNull Contact sendTarget) {
-        var newChain = MessageUtils.newChain(
-                new At(atTarget.getId()),
-                originalMessage
-        );
-        sendTarget.sendMessage(newChain);
-    }
-
-    protected static void QuoteThenReply(@NotNull Message originalMessage, @NotNull MessageChain originalMessageChain, @NotNull Contact sendTarget) {
-        var newChain = MessageUtils.newChain(
-                new QuoteReply(originalMessageChain),
-                originalMessage
-        );
-        sendTarget.sendMessage(newChain);
     }
 
     public MessageChain originalMessageChain() {
