@@ -1,6 +1,5 @@
 package org.qingzhixing.MessageContentHandlers;
 
-import net.mamoe.mirai.contact.Friend;
 import net.mamoe.mirai.contact.Group;
 import net.mamoe.mirai.contact.Member;
 import net.mamoe.mirai.message.data.MessageChain;
@@ -11,8 +10,8 @@ public abstract class AbstractGroupPlainTextHandler extends AbstractGroupMessage
     private boolean isAtBot;
     private boolean isOnlyAtBot;
 
-    protected AbstractGroupPlainTextHandler(Friend masterFriend) {
-        super(masterFriend);
+    protected AbstractGroupPlainTextHandler() {
+        super();
     }
 
     public boolean isNotAtBot() {

@@ -1,17 +1,22 @@
 package org.qingzhixing.CommandMatchers;
 
+import net.mamoe.mirai.contact.Contact;
+import net.mamoe.mirai.contact.Member;
 import net.mamoe.mirai.message.data.Image;
 import net.mamoe.mirai.message.data.MessageChain;
 import net.mamoe.mirai.message.data.MessageUtils;
 import net.mamoe.mirai.message.data.PlainText;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.qingzhixing.Global;
 import org.qingzhixing.Utilities;
 
 public class Matcher_MyInfo extends AbstractMatcher {
+    private static final Logger logger = Logger.getLogger(Matcher_MyInfo.class);
 
 
-    public Matcher_MyInfo(@NotNull String originalText, boolean isAtBot, boolean isOnlyAtBot) {
-        super(originalText, isAtBot, isOnlyAtBot);
+    public Matcher_MyInfo(@NotNull String originalText, @NotNull Member sender, @NotNull Contact contact, boolean isAtBot, boolean isOnlyAtBot) {
+        super(originalText, sender, contact, isAtBot, isOnlyAtBot);
         this.setCommandName("my-info");
         this.setDescription("返回头像、昵称与 QQ ID");
     }
@@ -24,19 +29,19 @@ public class Matcher_MyInfo extends AbstractMatcher {
         } catch (RuntimeException e) {
             var logErrorMessage = " 获取图片出错啦TT！";
             logger.error(logErrorMessage);
-            AtThenReply(new PlainText(logErrorMessage), sender(), group());
+            AtThenReply(new PlainText(logErrorMessage));
             //通知master
-            if (isMasterFriendExits()) {
-                masterFriend().sendMessage("" +
+            if (Global.isMasterFriendExists()) {
+                Global.masterFriend().sendMessage("" +
                         "用户使用指令 '/my-info' 时出现错误!" +
                         "\n用户昵称:" + sender().getNick() +
                         "\n用户ID:" + sender().getId() +
-                        "\n群名:" + group().getName() +
-                        "\n群号:" + group().getId() +
+                        "\nContactID:" + contact().getId() +
+                        "\nContact是否为群:" + ContactIsGroup() +
                         "\n错误原因:" + logErrorMessage
                 );
             }
-            return true;
+            return;
         }
         MessageChain replyChain = MessageUtils.newChain(
                 new PlainText("\n头像:"),
@@ -44,8 +49,6 @@ public class Matcher_MyInfo extends AbstractMatcher {
                 new PlainText("昵称: \"" + sender().getNick() + "\"\n"),
                 new PlainText("ID: " + sender().getId())
         );
-        AtThenReply(replyChain, sender(), group());
-        return true;
-
+        AtThenReply(replyChain);
     }
 }

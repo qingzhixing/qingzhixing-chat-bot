@@ -1,11 +1,11 @@
 package org.qingzhixing.MessageContentHandlers;
 
-import net.mamoe.mirai.contact.Friend;
 import net.mamoe.mirai.message.data.Image;
 import net.mamoe.mirai.message.data.MessageChain;
 import net.mamoe.mirai.message.data.MessageUtils;
 import net.mamoe.mirai.message.data.PlainText;
 import org.apache.log4j.Logger;
+import org.qingzhixing.Global;
 import org.qingzhixing.Utilities;
 
 import java.util.ArrayList;
@@ -14,8 +14,8 @@ public final class CommandGroupPlainTextHandler extends AbstractGroupPlainTextHa
     private static final Logger logger = Logger.getLogger(CommandGroupPlainTextHandler.class);
     private final ArrayList<CommandMatcher> matchers;
 
-    public CommandGroupPlainTextHandler(Friend masterFriend) {
-        super(masterFriend);
+    public CommandGroupPlainTextHandler() {
+        super();
         matchers = new ArrayList<>();
         //顺序代表优先级
         matchers.add(this::CommandHandler_Help);
@@ -49,8 +49,8 @@ public final class CommandGroupPlainTextHandler extends AbstractGroupPlainTextHa
             logger.error(logErrorMessage);
             Utilities.AtThenReply(new PlainText(logErrorMessage), sender(), group());
             //通知master
-            if (isMasterFriendExits()) {
-                masterFriend().sendMessage("" +
+            if (Global.isMasterFriendExists()) {
+                Global.masterFriend().sendMessage("" +
                         "用户使用指令 '/my-info' 时出现错误!" +
                         "\n用户昵称:" + sender().getNick() +
                         "\n用户ID:" + sender().getId() +

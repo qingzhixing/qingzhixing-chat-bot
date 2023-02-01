@@ -1,7 +1,6 @@
 package org.qingzhixing.EventListeners;
 
 import kotlin.coroutines.CoroutineContext;
-import net.mamoe.mirai.contact.Friend;
 import net.mamoe.mirai.contact.Group;
 import net.mamoe.mirai.contact.Member;
 import net.mamoe.mirai.event.EventHandler;
@@ -13,6 +12,7 @@ import net.mamoe.mirai.message.data.MessageContent;
 import net.mamoe.mirai.message.data.PlainText;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.qingzhixing.Global;
 import org.qingzhixing.MessageContentHandlers.AbstractGroupPlainTextHandler;
 import org.qingzhixing.MessageContentHandlers.CommandGroupPlainTextHandler;
 import org.qingzhixing.MessageContentHandlers.KeywordReplyGroupPlainText;
@@ -22,15 +22,13 @@ import java.util.ArrayList;
 
 public class SimpleEventListener extends SimpleListenerHost {
     private static final Logger logger = Logger.getLogger(SimpleEventListener.class);
-    private final Friend masterFriend;
     private final ArrayList<AbstractGroupPlainTextHandler> groupPlainTextHandlers;
 
-    public SimpleEventListener(Friend master) {
-        this.masterFriend = master;
+    public SimpleEventListener() {
         groupPlainTextHandlers = new ArrayList<>();
         //添加的顺序表示优先级
-        groupPlainTextHandlers.add(new CommandGroupPlainTextHandler(masterFriend));
-        groupPlainTextHandlers.add(new KeywordReplyGroupPlainText(masterFriend));
+        groupPlainTextHandlers.add(new CommandGroupPlainTextHandler());
+        groupPlainTextHandlers.add(new KeywordReplyGroupPlainText());
     }
 
     @Override
@@ -45,11 +43,11 @@ public class SimpleEventListener extends SimpleListenerHost {
      * 处理所有闪照Message
      */
     private void HandleFlashImageMessage(@NotNull FlashImage flashImage, @NotNull Member sender) {
-        if (masterFriend == null) return;
+        if (!Global.isMasterFriendExists()) return;
         var commonImage = flashImage.getImage();
-        masterFriend.sendMessage("截获闪照:");
-        masterFriend.sendMessage(commonImage);
-        masterFriend.sendMessage("发送者 昵称:\"" + sender.getNick() + "\" QQID:" + sender.getId());
+        Global.masterFriend().sendMessage("截获闪照:");
+        Global.masterFriend().sendMessage(commonImage);
+        Global.masterFriend().sendMessage("发送者 昵称:\"" + sender.getNick() + "\" QQID:" + sender.getId());
     }
 
     private void HandleGroupPlainText(@NotNull Member sender, @NotNull PlainText plainText, @NotNull MessageChain originalMessageChain, @NotNull Group group, boolean atBot, boolean isOnlyAtBot) {

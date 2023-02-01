@@ -1,6 +1,5 @@
 package org.qingzhixing.MessageContentHandlers;
 
-import net.mamoe.mirai.contact.Friend;
 import org.qingzhixing.Keywords.Keyword;
 import org.qingzhixing.Keywords.KeywordsLoader;
 
@@ -9,8 +8,8 @@ import java.util.PriorityQueue;
 public class KeywordReplyGroupPlainText extends AbstractGroupPlainTextHandler {
     PriorityQueue<Keyword> keywords;
 
-    public KeywordReplyGroupPlainText(Friend masterFriend) {
-        super(masterFriend);
+    public KeywordReplyGroupPlainText() {
+        super();
         keywords = new KeywordsLoader("/keywords.xml").keywords();
     }
 

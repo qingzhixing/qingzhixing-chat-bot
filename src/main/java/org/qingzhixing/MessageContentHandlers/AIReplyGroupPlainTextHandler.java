@@ -1,10 +1,8 @@
 package org.qingzhixing.MessageContentHandlers;
 
-import net.mamoe.mirai.contact.Friend;
-
 public class AIReplyGroupPlainTextHandler extends AbstractGroupPlainTextHandler {
-    public AIReplyGroupPlainTextHandler(Friend masterFriend) {
-        super(masterFriend);
+    public AIReplyGroupPlainTextHandler() {
+        super();
     }
 
     @Override

@@ -1,13 +1,20 @@
 package org.qingzhixing.CommandMatchers;
 
 
+import net.mamoe.mirai.contact.Contact;
+import net.mamoe.mirai.contact.Group;
+import net.mamoe.mirai.contact.Member;
+import net.mamoe.mirai.message.data.Message;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.qingzhixing.Utilities;
 
 public abstract class AbstractMatcher {
     private static final Logger logger = Logger.getLogger(AbstractMatcher.class);
     private final boolean isAtBot;
     private final boolean isOnlyAtBot;
+    private final Member sender;
+    private final Contact contact;
     private boolean needOnlyAtBot;
     private boolean needAtBot;
     private String description;
@@ -15,7 +22,7 @@ public abstract class AbstractMatcher {
     private MatchMode mode;
     private String originalText;
 
-    public AbstractMatcher(@NotNull String originalText, boolean isAtBot, boolean isOnlyAtBot) {
+    public AbstractMatcher(@NotNull String originalText, @NotNull Member sender, @NotNull Contact contact, boolean isAtBot, boolean isOnlyAtBot) {
         description = "";
         commandName = "";
         mode = MatchMode.START_WITH;
@@ -24,6 +31,31 @@ public abstract class AbstractMatcher {
         this.originalText = originalText;
         this.isAtBot = isAtBot;
         this.isOnlyAtBot = isOnlyAtBot;
+        this.sender = sender;
+        this.contact = contact;
+    }
+
+    //返回是否At成功
+    public final boolean AtThenReply(@NotNull final Message originalMessage) {
+        //仅群聊中可At
+        if (!(contact instanceof Group)) {
+            sender.sendMessage(originalMessage);
+            return false;
+        }
+        Utilities.AtThenReply(originalMessage, sender, contact);
+        return true;
+    }
+
+    public Member sender() {
+        return sender;
+    }
+
+    public Contact contact() {
+        return contact;
+    }
+
+    public boolean ContactIsGroup() {
+        return contact instanceof Group;
     }
 
     protected AbstractMatcher setNeedAtBot(boolean needAtBot) {

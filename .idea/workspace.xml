@@ -4,10 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="AbstractMatcher.java">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/CommandMatchers/Matcher_MyInfo.java" afterDir="false" />
+    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="移动masterFriend到Global">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Global.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/BotControllers/SimpleBotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/BotControllers/SimpleBotController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/CommandMatchers/AbstractMatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/CommandMatchers/AbstractMatcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/CommandMatchers/Matcher_MyInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/CommandMatchers/Matcher_MyInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/SimpleEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EventListeners/SimpleEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/MessageContentHandlers/AIReplyGroupPlainTextHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/MessageContentHandlers/AIReplyGroupPlainTextHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/MessageContentHandlers/AbstractGroupMessageContentHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/MessageContentHandlers/AbstractGroupMessageContentHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/MessageContentHandlers/AbstractGroupPlainTextHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/MessageContentHandlers/AbstractGroupPlainTextHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/MessageContentHandlers/AbstractMessageContentHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/MessageContentHandlers/AbstractMessageContentHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/MessageContentHandlers/CommandGroupPlainTextHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/MessageContentHandlers/CommandGroupPlainTextHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/MessageContentHandlers/KeywordReplyGroupPlainText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/MessageContentHandlers/KeywordReplyGroupPlainText.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +76,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="org.qingzhixing.Utilities" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.qingzhixing" />
       <recent name="" />
@@ -133,7 +145,7 @@
       <workItem from="1674294343737" duration="6234000" />
       <workItem from="1674462377922" duration="18627000" />
       <workItem from="1674625800017" duration="599000" />
-      <workItem from="1675198155945" duration="7290000" />
+      <workItem from="1675198155945" duration="10139000" />
     </task>
     <task id="LOCAL-00001" summary="Init and backup">
       <created>1674134140854</created>
@@ -408,7 +420,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675258997486</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="移动成员">
+      <created>1675261312982</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1675261312982</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -426,8 +445,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="迁移前备份" />
-    <MESSAGE value="优化代码" />
     <MESSAGE value="包更改" />
     <MESSAGE value="单独At检测，/help指令实现" />
     <MESSAGE value="Edit Readme.md" />
@@ -451,7 +468,9 @@
     <MESSAGE value="引用回复完成" />
     <MESSAGE value="重构指令处理预备中，备份" />
     <MESSAGE value="AbstractMatcher.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="AbstractMatcher.java" />
+    <MESSAGE value="移动成员" />
+    <MESSAGE value="移动masterFriend到Global" />
+    <option name="LAST_COMMIT_MESSAGE" value="移动masterFriend到Global" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
