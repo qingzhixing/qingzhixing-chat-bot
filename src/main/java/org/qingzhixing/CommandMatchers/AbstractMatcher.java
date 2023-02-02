@@ -5,6 +5,7 @@ import net.mamoe.mirai.contact.Contact;
 import net.mamoe.mirai.contact.Group;
 import net.mamoe.mirai.contact.Member;
 import net.mamoe.mirai.message.data.Message;
+import net.mamoe.mirai.message.data.MessageChain;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -23,6 +24,8 @@ public abstract class AbstractMatcher {
     private String commandName;
     private MatchMode mode;
 
+    private MessageChain originalMessageChain;
+
     public AbstractMatcher() {
         description = "";
         commandName = "";
@@ -34,10 +37,12 @@ public abstract class AbstractMatcher {
         isOnlyAtBot = false;
         sender = null;
         contact = null;
+        originalMessageChain = null;
     }
 
-    public final void BindContext(@NotNull String originalText, @NotNull Member sender, @NotNull Contact contact, boolean isAtBot, boolean isOnlyAtBot) {
+    public final void BindContext(@NotNull String originalText, @NotNull MessageChain originalMessageChain, @NotNull Member sender, @NotNull Contact contact, boolean isAtBot, boolean isOnlyAtBot) {
         this.originalText = originalText.trim();
+        this.originalMessageChain = originalMessageChain;
         this.isAtBot = isAtBot;
         this.isOnlyAtBot = isOnlyAtBot;
         this.sender = sender;
@@ -53,6 +58,14 @@ public abstract class AbstractMatcher {
         }
         Utilities.AtThenReply(originalMessage, sender, contact);
         return true;
+    }
+
+    public MessageChain originalMessageChain() {
+        return originalMessageChain;
+    }
+
+    public final void QuoteThenReply(@NotNull final Message originalMessage) {
+        Utilities.QuoteThenReply(originalMessage, originalMessageChain, contact);
     }
 
     public Member sender() {
