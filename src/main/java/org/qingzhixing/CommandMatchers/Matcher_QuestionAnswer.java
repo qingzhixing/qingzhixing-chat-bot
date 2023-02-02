@@ -5,8 +5,7 @@ public class Matcher_QuestionAnswer extends AbstractMatcher {
         super();
         this.setMode(MatchMode.CUSTOM)
                 .setCommandName("question-answer")
-                .setDescription("[@bot] <你问的问题 - 句子中存在'?','？','吗','嘛'> - 返回机器人的有趣回答\n" +
-                        "    tips:不艾特有10%几率自动回答");
+                .setDescription("[@bot] <你问的问题 - 句子中存在'?','？','吗','嘛'> - 返回机器人的有趣回答,不艾特有10%几率自动回答");
     }
 
     @Override

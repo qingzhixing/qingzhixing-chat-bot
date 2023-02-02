@@ -35,7 +35,7 @@ public class Matcher_Help extends AbstractMatcher {
                 break;
             }
         }
-        if (replyString.equals("")) replyString = "没有找到指令: '" + replyString + "'";
+        if (replyString.equals("")) replyString = "没有找到指令: '" + remainingString + "'";
         AtThenReply(new PlainText('\n' + replyString));
     }
 }

@@ -69,6 +69,7 @@ public abstract class AbstractMatcher {
 
     protected AbstractMatcher setNeedAtBot(boolean needAtBot) {
         this.needAtBot = needAtBot;
+        if (!needAtBot) setNeedOnlyAtBot(false);
         return this;
     }
 
