@@ -1,8 +1,12 @@
 package org.qingzhixing.CommandMatchers;
 
 import net.mamoe.mirai.message.data.PlainText;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Matcher_AtBot extends AbstractMatcher {
+    private static final Logger logger = LogManager.getLogger(Matcher_AtBot.class);
+
     public Matcher_AtBot() {
         super();
         this.setCommandName("at-bot")
@@ -23,6 +27,10 @@ public class Matcher_AtBot extends AbstractMatcher {
 
     @Override
     public boolean Match() {
+        //只at不说话触发
+        if (!originalText().trim().equals("")) {
+            return false;
+        }
         if (!isAtBot()) return false;
         if (!isOnlyAtBot()) return Math.random() <= 0.1;
         return Math.random() <= 0.5;
