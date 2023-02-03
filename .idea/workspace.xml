@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="Matcher_Test.java">
+    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="bug fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/CommandMatchers/Matcher_AtBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/CommandMatchers/Matcher_AtBot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/MessageContentHandlers/CommandGroupPlainTextHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/MessageContentHandlers/CommandGroupPlainTextHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/CommandMatchers/Matcher_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/CommandMatchers/Matcher_Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Utilities.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,14 +137,7 @@
       <workItem from="1674294343737" duration="6234000" />
       <workItem from="1674462377922" duration="18627000" />
       <workItem from="1674625800017" duration="599000" />
-      <workItem from="1675198155945" duration="21921000" />
-    </task>
-    <task id="LOCAL-00004" summary="AbstractBotController.java&#10;Test_BotController.java&#10;EasyBotFactory.java&#10;BotGroupController.java&#10;added">
-      <created>1674148112967</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1674148112967</updated>
+      <workItem from="1675198155945" duration="23434000" />
     </task>
     <task id="LOCAL-00005" summary="Utilities.java">
       <created>1674150238997</created>
@@ -481,7 +475,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675374683376</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="bug fix">
+      <created>1675375236307</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1675375236307</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -516,7 +517,6 @@
     <MESSAGE value="Matcher_MyInfo.java" />
     <MESSAGE value="弃用log4j1，转移至log4j2" />
     <MESSAGE value="测试重构的代码ing" />
-    <MESSAGE value="bug fix" />
     <MESSAGE value="bug fixˆ" />
     <MESSAGE value="remove ˆdebug" />
     <MESSAGE value="Matcherˆ_Help.java" />
@@ -524,7 +524,8 @@
     <MESSAGE value="Matcher_Help.java正式完成" />
     <MESSAGE value="AtBot" />
     <MESSAGE value="Matcher_Test.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Matcher_Test.java" />
+    <MESSAGE value="bug fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fix" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

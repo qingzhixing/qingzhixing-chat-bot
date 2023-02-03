@@ -109,6 +109,16 @@ public final class Utilities {
         sendTarget.sendMessage(newChain);
     }
 
+    public static String GenerateAllPlainTextAppendString(@NotNull MessageChain originalMessageChain) {
+        var str = new StringBuilder();
+        for (var singleMessage : originalMessageChain) {
+            if (!(singleMessage instanceof PlainText)) continue;
+            var plainText = (PlainText) singleMessage;
+            str.append(plainText);
+        }
+        return str.toString();
+    }
+
     /*
     TODO:失败了，有其他方法获得jar包内文件的File对象吗?
      public static File GetCurrentJarResourceFile(@NotNull String filePath) {

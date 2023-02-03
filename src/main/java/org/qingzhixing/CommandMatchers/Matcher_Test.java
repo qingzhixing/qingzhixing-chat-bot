@@ -13,6 +13,9 @@ public class Matcher_Test extends AbstractMatcher {
 
     @Override
     protected void Handle() {
-        QuoteThenReply(new PlainText("引用回复测试"));
+        AtThenReply(new PlainText("现在进行messageChain拆分"));
+        for (var singleMessage : originalMessageChain()) {
+            contact().sendMessage(singleMessage.toString());
+        }
     }
 }
