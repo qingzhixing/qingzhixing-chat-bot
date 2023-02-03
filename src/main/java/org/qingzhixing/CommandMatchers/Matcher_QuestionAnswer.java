@@ -29,10 +29,11 @@ public class Matcher_QuestionAnswer extends AbstractMatcher {
         //没有AtBot则90%概率不回答
         if (!isAtBot() && Math.random() < 0.9) {
             return false;
-        }
-        //否则50几率回答
-        if (Math.random() < 0.5) {
-            return false;
+        } else {
+            //否则50几率回答
+            if (Math.random() < 0.5) {
+                return false;
+            }
         }
         return originalText().contains("?") || originalText().contains("？") ||
                 originalText().contains("吗") || originalText().contains("嘛");
