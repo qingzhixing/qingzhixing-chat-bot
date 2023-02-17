@@ -16,11 +16,13 @@
 
     <dependencies>
         <!--Mirai机器人-->
+        <!-- https://mvnrepository.com/artifact/net.mamoe/mirai-core-jvm -->
         <dependency>
             <groupId>net.mamoe</groupId>
             <artifactId>mirai-core-jvm</artifactId>
-            <version>2.12.2</version>
+            <version>2.14.0</version>
         </dependency>
+
 
         <!--jdom 解析xml -->
         <dependency>

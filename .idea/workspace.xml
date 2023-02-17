@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="bug fix">
+    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="修复10%概率回复问题中无法回复（概率错误）的bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/CommandMatchers/Matcher_QuestionAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/CommandMatchers/Matcher_QuestionAnswer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,14 +135,8 @@
       <workItem from="1674294343737" duration="6234000" />
       <workItem from="1674462377922" duration="18627000" />
       <workItem from="1674625800017" duration="599000" />
-      <workItem from="1675198155945" duration="24120000" />
-    </task>
-    <task id="LOCAL-00006" summary="settings文件选择">
-      <created>1674152772910</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1674152772910</updated>
+      <workItem from="1675198155945" duration="25639000" />
+      <workItem from="1676628948190" duration="861000" />
     </task>
     <task id="LOCAL-00007" summary="bot登陆与上线通知">
       <created>1674154447974</created>
@@ -480,7 +474,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675413862005</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="修复10%概率回复问题中无法回复（概率错误）的bug">
+      <created>1675455719232</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1675455719232</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -498,7 +499,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="bot不能处理自己发消息的事件" />
     <MESSAGE value="更改command handler中断设置" />
     <MESSAGE value="修复指令匹配的bug" />
     <MESSAGE value="add keyword" />
@@ -523,7 +523,8 @@
     <MESSAGE value="AtBot" />
     <MESSAGE value="Matcher_Test.java" />
     <MESSAGE value="bug fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fix" />
+    <MESSAGE value="修复10%概率回复问题中无法回复（概率错误）的bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复10%概率回复问题中无法回复（概率错误）的bug" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
