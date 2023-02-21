@@ -28,7 +28,7 @@ public class Matcher_AtBot extends AbstractMatcher {
 
     @Override
     public boolean Match() {
-        var allPlainText = Utilities.GenerateAllPlainTextAppendString(originalMessageChain()).trim();
+        var allPlainText = Utilities.ExtractPlainTextString(originalMessageChain()).trim();
         //只at不说话触发
         if (!allPlainText.equals("")) {
             return false;

@@ -92,7 +92,7 @@ public class KeywordsLoader {
         logger.info("解析关键词文件中...");
         URL keywordsURL;
         try {
-            keywordsURL = Utilities.GetCurrentJarResourceURL(keywordsFilePath);
+            keywordsURL = Utilities.GenerateJarResourceFileURL(keywordsFilePath);
         } catch (RuntimeException e) {
             logger.error("Unable to load keywords file.Reason:" + e.getMessage() + e);
             return;

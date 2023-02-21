@@ -7,6 +7,7 @@ import org.jdom.JDOMException;
 import org.jdom.input.SAXBuilder;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -17,16 +18,13 @@ public class Settings {
     private final ArrayList<Account> botAccountList;
     private Account masterAccount;
 
-    public Settings(@NotNull String settingsFilePath) {
+    public Settings() {
         botAccountList = new ArrayList<>();
         masterAccount = new Account();
-        ParseSettingsFile(settingsFilePath);
     }
 
     public void ClearAll() {
-        if (botAccountList != null) {
-            botAccountList.clear();
-        }
+        botAccountList.clear();
         masterAccount = null;
     }
 
@@ -78,14 +76,36 @@ public class Settings {
         }
     }
 
-    public void ParseSettingsFile(@NotNull String settingsFilePath) {
+    public void ParseJarResourceFile(@NotNull String settingsFilePath) {
         URL settingsURL;
         try {
-            settingsURL = Utilities.GetCurrentJarResourceURL(settingsFilePath);
+            settingsURL = Utilities.GenerateJarResourceFileURL(settingsFilePath);
         } catch (RuntimeException e) {
             logger.error("Unable to load settings.Reason: " + e.getMessage(), e);
             return;
         }
+        ParseURL(settingsURL);
+    }
+
+    public void ParseFile(@NotNull String settingsFilePath) {
+        URL settingsURL;
+        try {
+            settingsURL = Utilities.GenerateResourceFileURL(settingsFilePath);
+        } catch (FileNotFoundException e) {
+            logger.error("Unable to load settings.Reason: " + e.getMessage(), e);
+            return;
+        }
+        ParseURL(settingsURL);
+    }
+
+    public void ParseURL(@NotNull URL settingsURL) {
+//        URL settingsURL;
+//        try {
+//            settingsURL = Utilities.GetCurrentJarResourceURL(settingsFilePath);
+//        } catch (RuntimeException e) {
+//            logger.error("Unable to load settings.Reason: " + e.getMessage(), e);
+//            return;
+//        }
 
         //使用SAXBuilder解析xml
         var builder = new SAXBuilder();

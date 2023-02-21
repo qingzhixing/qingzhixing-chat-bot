@@ -10,8 +10,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +23,7 @@ public final class Utilities {
     private static final Logger logger = LogManager.getLogger(Utilities.class);
 
     @NotNull
-    public static URL GetCurrentJarResourceURL(@NotNull String path) throws RuntimeException {
+    public static URL GenerateJarResourceFileURL(@NotNull String path) throws RuntimeException {
         URL url = Utilities.class.getResource(path);
         if (url == null) {
             String errorMessage = "jar资源文件为null.";
@@ -30,6 +33,30 @@ public final class Utilities {
         }
         return url;
     }
+
+    /**
+     * 用地址构造File,自动检测是否存在或是否为文件
+     *
+     * @return 返回一个用目录地址构造的File类
+     */
+    public static File BuildResourceFile(@NotNull String path) throws FileNotFoundException {
+        File file = new File(path);
+        if (!file.exists() || file.isDirectory()) {
+            throw new FileNotFoundException("目标地址：" + path + " 不存在或为目录");
+        }
+        return file;
+    }
+
+    @NotNull
+    public static URL GenerateResourceFileURL(@NotNull String path) throws FileNotFoundException {
+        File resourceFile = BuildResourceFile(path);
+        try {
+            return resourceFile.toURI().toURL();
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
     public static <T extends MessageContent> List<MessageContent>
     GetMessageChainContentOf(MessageChain messageChain, Class<T> messageType) {
@@ -109,7 +136,10 @@ public final class Utilities {
         sendTarget.sendMessage(newChain);
     }
 
-    public static String GenerateAllPlainTextAppendString(@NotNull MessageChain originalMessageChain) {
+    /**
+     * @return 从MessageChain中提取到的所有PlainText转化为字符串之后相连接的最终字符串
+     */
+    public static @NotNull String ExtractPlainTextString(@NotNull MessageChain originalMessageChain) {
         var str = new StringBuilder();
         for (var singleMessage : originalMessageChain) {
             if (!(singleMessage instanceof PlainText)) continue;

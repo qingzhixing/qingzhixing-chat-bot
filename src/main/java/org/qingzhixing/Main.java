@@ -8,22 +8,25 @@ public class Main {
 
     public static void main(String[] args) {
 
-        var privateSettings = new Settings("/settings-private.xml");
-        var publicSettings = new Settings("/settings.xml");
+        var privateSettingsJarResource = new Settings();
+        privateSettingsJarResource.ParseJarResourceFile("/settings-private.xml");
+        var publicSettingsJarResource = new Settings();
+        publicSettingsJarResource.ParseJarResourceFile("/settings.xml");
+        
         System.out.println("settings-private.xml:");
-        privateSettings.Debug_ConsoleOutputSettings();
+        privateSettingsJarResource.Debug_ConsoleOutputSettings();
         System.out.println("\nsettings.xml:");
-        publicSettings.Debug_ConsoleOutputSettings();
+        publicSettingsJarResource.Debug_ConsoleOutputSettings();
 
         Settings finalSettings;
-        if (privateSettings.CheckIsValid()) {
+        if (privateSettingsJarResource.CheckIsValid()) {
             logger.info("settings-private.xml合法，使用");
-            finalSettings = privateSettings;
+            finalSettings = privateSettingsJarResource;
         } else {
             logger.info("settings-private.xml不合法或不存在");
-            if (publicSettings.CheckIsValid()) {
+            if (publicSettingsJarResource.CheckIsValid()) {
                 logger.info("settings.xml合法，使用");
-                finalSettings = publicSettings;
+                finalSettings = publicSettingsJarResource;
             } else {
                 logger.info("settings.xml不合法或不存在，无配置文件，程序无法运行");
                 return;
