@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="update Readme.md">
+    <list default="true" id="7dfea068-3167-4783-bf79-e4ba702f75aa" name="变更" comment="Back up">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/CommandMatchers/Matcher_AtBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/CommandMatchers/Matcher_AtBot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Keywords/KeywordsLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Keywords/KeywordsLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/Utilities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EasyBotFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/qingzhixing/EasyBotFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,25 +48,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "code.cleanup.on.save": "true",
-    "last_directory_selection": "/Users/qingzhixing/Documents/Project/IdeaProjects/QingzhixingChatBot/src/test/java",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "项目",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "preferences.sourceCode.Java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;/Users/qingzhixing/Documents/Project/IdeaProjects/QingzhixingChatBot/src/test/java&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;项目&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveMembersDialog.RECENTS_KEY">
       <recent name="org.qingzhixing.Utilities" />
@@ -112,6 +109,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Maven.Maven package" />
       <item itemvalue="应用程序.未命名" />
@@ -143,14 +151,8 @@
       <workItem from="1675198155945" duration="25639000" />
       <workItem from="1676628948190" duration="1076000" />
       <workItem from="1676973038230" duration="2501000" />
-      <workItem from="1676976777808" duration="1303000" />
-    </task>
-    <task id="LOCAL-00009" summary="闪照截获">
-      <created>1674159866167</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1674159866167</updated>
+      <workItem from="1676976777808" duration="2087000" />
+      <workItem from="1679656638792" duration="1622000" />
     </task>
     <task id="LOCAL-00010" summary="@Bot 我是谁?">
       <created>1674164693432</created>
@@ -488,7 +490,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676973759786</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Back up">
+      <created>1676978344657</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1676978344658</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -506,7 +515,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add keyword" />
     <MESSAGE value="修复无javafx的问题，test" />
     <MESSAGE value="readme.md" />
     <MESSAGE value="add keywords" />
@@ -531,7 +539,8 @@
     <MESSAGE value="修复10%概率回复问题中无法回复（概率错误）的bug" />
     <MESSAGE value="更新maven库以适应无法登陆的问题" />
     <MESSAGE value="update Readme.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="update Readme.md" />
+    <MESSAGE value="Back up" />
+    <option name="LAST_COMMIT_MESSAGE" value="Back up" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
