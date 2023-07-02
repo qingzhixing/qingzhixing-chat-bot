@@ -7,8 +7,7 @@
 ## 配置
 
 将 src/main/resources/settings.xml 中内容填充完整即可  
-也可以复制粘贴为settings-private.xml,与settings.xml等价
-优先读取settings-private.xml  
+也可以复制粘贴为settings-private.xml,与settings.xml等价 优先读取settings-private.xml  
 关键词回复文件在同目录下keywords.xml中，也可以写在keywords-private.xml中
 
 ## 如何运行
@@ -33,6 +32,8 @@ java -jar <前面没有'original-'的.jar文件>
 ## 注意事项：
 
 ### 目前无法使用中！
+
+### 因腾讯风控原因!
 
 如果出现原来可以登陆但是突然无法登陆的问题，请及时更新仓库，如果更新了仓库无法解决且作者未更新代码请联系作者！
 
