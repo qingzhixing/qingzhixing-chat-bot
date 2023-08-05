@@ -2,6 +2,8 @@ package org.qingzhixing.BotControllers;
 
 
 import net.mamoe.mirai.Bot;
+import net.mamoe.mirai.auth.BotAuthInfo;
+import net.mamoe.mirai.auth.BotAuthorization;
 import net.mamoe.mirai.message.data.PokeMessage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
